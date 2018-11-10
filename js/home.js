@@ -18,10 +18,13 @@ var title1 = $('.title-1');
  * Start 
  */ 
 var widthRate = 1; // The real window width / 1920
-var defaultWidth = 1920;
+var windowWidth = 1920; // The real window width
+var windowHeight = 1080; // The real window height
+var defaultWidth = 1920; // Standard designed width
 var scrollTop = 0;
 var config = {
 	body_fontSize: 16,
+	bg_1_width: 1920,
 	bg_1_height: 2133,
 	bg_1_hideAt: 1100,
 	rect_1_showAt: 200,
@@ -38,12 +41,14 @@ var config = {
  * Init
  * Start 
  */
-
+win.scrollTop(0);
+windowResized();
+windowScrolled();
 setTimeout(function() {
-	win.scrollTop(0); 
+	win.scrollTop(0);
 	windowResized();
 	windowScrolled();
-});
+}, 150);
 /* 
  * Init
  * End 
@@ -69,12 +74,20 @@ win.scroll(function(evt) {
  * Start 
  */ 
 function windowResized() {
-	var _width = $(window).width();
+	windowWidth = win.width();
+	windowHeight = win.height();
 	scrollTop = win.scrollTop();
-	widthRate = _width / defaultWidth;
+	widthRate = windowWidth / defaultWidth;
 	body.css('font-size', (config.body_fontSize * widthRate) + 'px');
+	if (windowWidth / windowHeight >= config.bg_1_width / config.bg_1_height) {
+		container1.css('height', config.bg_1_height * widthRate);
+		bg1.find('img').css('width', '100%').css('height', '');
+	} else {
+		container1.css('height', windowHeight);
+		bg1.find('img').css('height', '100%').css('width', '');
+	}
 	// container1.css('height', config.bg_1_height * widthRate);
-	// rect1.css('height', _width * config.rect_1_widthRate / config.rect_1_heightRate);
+	// rect1.css('height',windowWidth * config.rect_1_widthRate / config.rect_1_heightRate);
 }
 function windowScrolled() {
 	scrollTop = win.scrollTop();
@@ -84,10 +97,10 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > _hideAt && !bg1.hasClass('be-fixed')) {
+	if (_scrollY > Math.max(container1.height() - windowHeight, _hideAt) && !bg1.hasClass('be-fixed')) {
 		bg1.addClass('be-fixed');
 		bg1.css('top', -_scrollY);
-	} else if (_scrollY <= _hideAt && bg1.hasClass('be-fixed')) {
+	} else if (_scrollY <= Math.min(container1.height() - windowHeight, _hideAt) && bg1.hasClass('be-fixed')) {
 		bg1.removeClass('be-fixed');
 		bg1.css('top', 0);
 	}
@@ -106,7 +119,7 @@ function checkRect1() {
 	rect1.css('right', _dx);
 	checkTitle1();
 	function checkTitle1() {
-		var _width = $(window).width();
+		varwindowWidth = $(window).width();
 		var _hideAt2 = config.title_1_hideAt * widthRate;
 		if (_scrollY > _hideAt2) {
 			title1.css('top', _hideAt2 - _scrollY);
