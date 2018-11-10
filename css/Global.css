@@ -48,12 +48,12 @@ input, textarea {
     width: 100%;
 }
 
-.c1 {
+.container-1 {
     height: 2000px;
     background-color: #fefefe;
 }
 
-.c2 {
+.container-2 {
     height: 1700px;
     background-color: #dedede;
 }
@@ -75,7 +75,7 @@ input, textarea {
     width: 100%;
 }
 
-.rightRect {
+.rect-1 {
     width: 65%;
     height: 595px;
     background-color: #f00;
