@@ -97,7 +97,7 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > Math.max(container1.height() - windowHeight, _hideAt) && !bg1.hasClass('be-fixed')) {
+	if (_scrollY > Math.min(container1.height() - windowHeight, _hideAt) && !bg1.hasClass('be-fixed')) {
 		bg1.addClass('be-fixed');
 		bg1.css('top', -_scrollY);
 	} else if (_scrollY <= Math.min(container1.height() - windowHeight, _hideAt) && bg1.hasClass('be-fixed')) {
