@@ -76,12 +76,13 @@ input, textarea {
 }
 
 .rect-1 {
-    width: 65%;
+    max-width: 65%;
     height: 595px;
     background-color: #f00;
     position: fixed;
     right: 0;
     top: 100px;
+    transition: width 0.2s linear;
 }
 
 .be-fixed {
