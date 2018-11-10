@@ -1,0 +1,89 @@
+@charset "utf-8";
+/*
+@font-face {
+    font-family: 'education_vagrounded_light';
+    src: url('educationvagrounded-light-webfont.eot');
+    src: url('educationvagrounded-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('educationvagrounded-light-webfont.woff') format('woff')
+         url('educationvagrounded-light-webfont.ttf') format('truetype'),
+         url('educationvagrounded-light-webfont.svg#education_vagroundedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+* {
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: "黑体", Arial;
+    font-size: 28px;
+    color: #3f3f3f;
+    background-color: #ea0029;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+input, textarea {
+    border: none;
+    font-size: 30px;
+    font-family: "黑体", Arial;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    width: 100%;
+}
+
+.c1 {
+    height: 2000px;
+    background-color: #fefefe;
+}
+
+.c2 {
+    height: 1700px;
+    background-color: #dedede;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-1 {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bg-1 img {
+    width: 100%;
+}
+
+.rightRect {
+    width: 65%;
+    height: 595px;
+    background-color: #f00;
+    position: fixed;
+    right: 0;
+    top: 100px;
+}
+
+.be-fixed {
+    position: fixed;
+}
