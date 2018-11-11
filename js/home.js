@@ -44,6 +44,7 @@ var config = {
 win.scrollTop(0);
 windowResized();
 windowScrolled();
+// This setTimeout below is a work around for reset scroll bar in IE 
 setTimeout(function() {
 	win.scrollTop(0);
 	windowResized();
@@ -97,11 +98,11 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > Math.min(container1.height() - windowHeight, _hideAt) && !bg1.hasClass('be-fixed')) {
-		bg1.addClass('be-fixed');
+	if (_scrollY > Math.min(container1.height() - windowHeight, _hideAt)) {
+		if (!bg1.hasClass('be-fixed')) bg1.addClass('be-fixed');
 		bg1.css('top', -_scrollY);
-	} else if (_scrollY <= Math.min(container1.height() - windowHeight, _hideAt) && bg1.hasClass('be-fixed')) {
-		bg1.removeClass('be-fixed');
+	} else if (_scrollY <= Math.min(container1.height() - windowHeight, _hideAt)) {
+		if (bg1.hasClass('be-fixed')) bg1.removeClass('be-fixed');
 		bg1.css('top', 0);
 	}
 }
@@ -129,7 +130,6 @@ function checkRect1() {
 		title1.css('left', _dx);
 	}
 }
-
 /* 
  * Function definition
  * End 

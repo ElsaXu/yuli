@@ -1,0 +1,181 @@
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.container-1 {
+    height: 2133px;
+    background-color: #fefefe;
+}
+
+.bg-1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bg-1 img {
+    
+}
+
+.container-2 {
+    height: 1700px;
+    background-color: #ea0029;
+    box-sizing: content-box;
+    padding: 4em 0;
+}
+
+.container2-inner {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container2-titles {
+    position: absolute;
+    top: 30px;
+    left: 80px;
+}
+
+.bg2-title-2 {
+    margin-top: 116px;
+}
+
+.container2-texts {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.container2-texts img:last-child {
+    margin-left: 0.75em;
+}
+.container-2 img {
+    vertical-align: top;
+    width: 100%;
+}
+
+.bg2-text {
+    position: relative;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+.bg2-text>div {
+    float: left;
+    margin-left: 24px;
+}
+
+.bg2-text-2 {
+    left: 5em;
+}
+
+.bg2-title-1 {
+    width: 26.1875em;
+    min-width: 315px;
+}
+.bg2-title-2 {
+    width: 16em;
+    min-width: 192px;
+}
+.bg2-image-1 {
+    width: 13.9375em;
+    min-width: 168px;
+}
+.bg2-image-2 {
+    width: 10.3125em;
+    min-width: 123px;
+}
+.bg2-image-3 {
+    width: 10.6875em;
+    min-width: 128px;
+}
+.bg2-des-1 {
+    width: 16.1875em;
+    min-width: 195px;
+}
+.bg2-des-2 {
+    width: 17.1875em;
+    min-width: 205px;
+}
+.bg2-des-3 {
+    width: 20.1255em;
+    min-width: 241px;
+}
+
+.rect-1 {
+    width: 65%;
+    height: 37.1875em;
+    background-color: #ea0029;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    overflow: hidden;
+    transition: right 0.2s linear;
+    animation: rect-1-enter 0.8s;
+    animation-fill-mode: forward;
+}
+@keyframes rect-1-enter {
+    from {width: 0;}
+    to {width: 65%;}
+}
+
+.title-1 {
+    padding: 5em 5em;
+    height: 100%;
+    position: relative;
+    top: 100%;
+    transition: top 0.2s linear, left 0.2s linear;
+}
+.title-1 img {
+    height: 100%;
+    position: relative;
+    animation: title-1-enter 0.8s ease 0.8s;
+    animation-fill-mode: both;
+}
+@keyframes title-1-enter {
+    from {top: 150%;}
+    to {top: 0;}
+}
+
+.be-fixed {
+    position: fixed;
+}
+
+.menu {
+    position: fixed;
+    left: 10.25em;
+    top: 0;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-title {
+    background-color: #ea0029;
+    padding: 2.5em;
+}
+.menu-title img {
+    width: 8.5em;
+}
+
+.menu-icon {
+    background-color: #fff;
+    padding: 2.5em;
+    text-align: center;
+}
+.menu-icon img {
+    width: 3.9375em;
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1600px)  {
+    .container2-inner {
+        width: 820px;
+    }
+}
+
+@media screen and (min-width: 1010px) and (max-width: 1280px)  {
+    .container2-inner {
+        width: 750px;
+    }
+}
+
