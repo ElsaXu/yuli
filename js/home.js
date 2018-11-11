@@ -9,8 +9,10 @@ var rect1 = $('.rect-1');
 var bg1 = $('.bg-1');
 var title1 = $('.title-1');
 var title2 = $('.bg2-title-1');
+var title2Clone = $('.bg2-title-1-placeholder');
 var container2 = $('.container-2');
 var container2Inner = $('.container2-inner');
+var container2Titles = $('.container2-titles');
 /* 
  * Visual dom elements definition
  * End
@@ -103,13 +105,14 @@ function windowResized() {
 	container1.data('height', container1.height());
 	rect1.data('width', rect1.width());
 	var _cHei = container2Inner.height();
-	var _maxHei = Math.max(windowHeight, _cHei);
+	var _maxHei = Math.max(windowHeight, _cHei + 100);
 	container2.css('height', _maxHei);
 	container2Inner.css('top', (_maxHei - _cHei) / 2);
 	container2.data('height', container2.height());
 	container2.data('offset', container2.offset());
-	title2.css('top', 0);
-	title2.data('topToContainer2', title2.offset().top - container2.data('offset').top);
+	container2Inner.data('offset', container2Inner.offset());
+	container2Inner.data('topToContainer2', (_maxHei - _cHei) / 2);
+	title2.data('topToContainer2', container2Titles.offset().top - container2.data('offset').top);
 }
 function windowScrolled() {
 	scrollTopPrev = scrollTop;
@@ -163,21 +166,37 @@ function checkBg2() {
 		container2.css('background-color', config.bg_2_defaultColor);
 	}
 	var _dy = title2.data('topToContainer2');
-	var _cond = 0;
-	if (_top <= _dy) {
-		title2.css('top', 0);
-	} else if (_top >= windowHeight + windowHeight * config.title_2_showAtRate) {
-		_cond = Math.min(config.title_2_showAtRate * windowHeight, _top - _dy);
-		title2.css('top', -1 * title2.data('dy'));
-	} else if (_top >= windowHeight) {
-		_cond = (windowHeight + windowHeight * config.title_2_showAtRate - _top) / (windowHeight * config.title_2_showAtRate);
-		title2.css('top', -1 * windowHeight * _cond);
+	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
+		if (_top <= 0) {
+			title2.hide();
+			title2Clone.css('opacity', 1);
+		} else {
+			title2.show();
+			title2Clone.css('opacity', 0);
+		}
+		title2.css('top', title2.data('topToContainer2'));
 	} else {
-		_cond = Math.max(_top, 0) / windowHeight;
-		title2.css('top', -1 * windowHeight * _cond);
+		title2.css('top', '120%');
+	}
+	if (_top + container2.data('height') < windowHeight) {
+		if (!container2Inner.hasClass('be-fixed')) {
+			container2Inner.addClass('be-fixed');
+			container2Inner.css('top', container2Inner.data('offset').top - scrollTop);
+		}
+		container2Inner.css('left', container2Inner.data('offset').left);
+		container2.css('overflow', 'hidden');
+	} else {
+		if (container2Inner.hasClass('be-fixed')) {
+			container2Inner.removeClass('be-fixed');
+		}
+		container2Inner.css('top', container2Inner.data('topToContainer2'));
+		container2Inner.css('left', '');
+		container2.css('overflow', '');
+	}
+	if (_top + container2.data('height') < windowHeight) {
+
 	}
 }
-
 /* 
  * Function definition
  * End 

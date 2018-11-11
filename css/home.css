@@ -25,7 +25,6 @@
     height: 1700px;
     background-color: #ea0029;
     box-sizing: content-box;
-    padding: 50px 0;
     transition: background-color 1s;
 }
 
@@ -42,8 +41,9 @@
 }
 
 .bg2-title-1 {
-    position: relative;
-    transition: top 0.1s;
+    position: fixed;
+    top: 100%;
+    transition: top 1s;
 }
 
 .bg2-title-2 {
@@ -81,10 +81,14 @@
 }
 
 .bg2-title-1 {
+    width: 24.1875em;
+    min-width: 291px;
+}
+.bg2-title-1-placeholder {
     position: relative;
     width: 24.1875em;
     min-width: 291px;
-    height: 17.4em;
+    opacity: 0;
 }
 .title-text {
     font-size: 50px;
