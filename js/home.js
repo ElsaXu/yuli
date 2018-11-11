@@ -8,6 +8,9 @@ var container1 = $('.container-1');
 var rect1 = $('.rect-1');
 var bg1 = $('.bg-1');
 var title1 = $('.title-1');
+var title2 = $('.bg2-title-1');
+var container2 = $('.container-2');
+var container2Inner = $('.container2-inner');
 /* 
  * Visual dom elements definition
  * End
@@ -31,6 +34,8 @@ var config = {
 	rect_1_hideAt: 1200,
 	rect_1_widthRate: 0.65,
 	title_1_hideAt: 0,
+	container_2_defaultColor: '#ea0029',
+	container_2_finalColor: '#b40020',
 }
 /* 
  * Parameters definition
@@ -82,26 +87,35 @@ function windowResized() {
 	body.css('font-size', (config.body_fontSize * widthRate) + 'px');
 	if (windowWidth / windowHeight >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
+		container1.data.height = container1.height();
 		bg1.find('img').css('width', '100%').css('height', '');
 	} else {
 		container1.css('height', windowHeight);
+		container1.data.height = container1.height();
 		bg1.find('img').css('height', '100%').css('width', '');
+		bg1.addClass('be-fixed');
+		bg1.css('top', 0);
 	}
-	// container1.css('height', config.bg_1_height * widthRate);
-	// rect1.css('height',windowWidth * config.rect_1_widthRate / config.rect_1_heightRate);
+	var _cHei = container2Inner.height();
+	var _maxHei = Math.max(windowHeight, _cHei);
+	container2.css('height', _maxHei);
+	container2Inner.css('top', (_maxHei - _cHei) / 2);
 }
 function windowScrolled() {
 	scrollTop = win.scrollTop();
 	checkBg1();
 	checkRect1();
+	checkBg2();
 }
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > Math.min(container1.height() - windowHeight, _hideAt)) {
-		if (!bg1.hasClass('be-fixed')) bg1.addClass('be-fixed');
-		bg1.css('top', -_scrollY);
-	} else if (_scrollY <= Math.min(container1.height() - windowHeight, _hideAt)) {
+	if (_scrollY > Math.min(container1.data.height - windowHeight, _hideAt)) {
+		if (!bg1.hasClass('be-fixed')) {
+			bg1.addClass('be-fixed');
+			bg1.css('top', -_scrollY);
+		}
+	} else {
 		if (bg1.hasClass('be-fixed')) bg1.removeClass('be-fixed');
 		bg1.css('top', 0);
 	}
@@ -129,6 +143,9 @@ function checkRect1() {
 		}
 		title1.css('left', _dx);
 	}
+}
+function checkBg2() {
+
 }
 /* 
  * Function definition

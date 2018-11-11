@@ -25,7 +25,8 @@
     height: 1700px;
     background-color: #ea0029;
     box-sizing: content-box;
-    padding: 4em 0;
+    padding: 50px 0;
+    transition: background-color 2s;
 }
 
 .container2-inner {
@@ -101,6 +102,11 @@
 .bg2-des-3 {
     width: 20.1255em;
     min-width: 241px;
+}
+
+.container-3 {
+    height: 2000px;
+    background-color: #fdfdfd;
 }
 
 .rect-1 {
