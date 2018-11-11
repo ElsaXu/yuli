@@ -20,11 +20,12 @@ var container2Inner = $('.container2-inner');
  * Parameters definition
  * Start 
  */ 
-var widthRate = 1; // The real window width / 1920
+var widthRate = 1; // The real window (width / defaultWidth)
 var windowWidth = 1920; // The real window width
 var windowHeight = 1080; // The real window height
 var defaultWidth = 1920; // Standard designed width
 var scrollTop = 0;
+var scrollTopPrev = 0;
 var config = {
 	body_fontSize: 16,
 	bg_1_width: 1920,
@@ -36,8 +37,10 @@ var config = {
 	rect_1_hideAt: 1200,
 	rect_1_widthRate: 0.65,
 	title_1_hideAt: 0,
-	container_2_defaultColor: '#000',
-	container_2_finalColor: '#b40020',
+	bg_2_defaultColor: '#000',
+	bg_2_finalColor: '#b40020',
+	bg_2_colorSwitchRate: 0.75,
+	title_2_showAtRate: 0.5,
 }
 /* 
  * Parameters definition
@@ -105,8 +108,11 @@ function windowResized() {
 	container2Inner.css('top', (_maxHei - _cHei) / 2);
 	container2.data('height', container2.height());
 	container2.data('offset', container2.offset());
+	title2.css('top', 0);
+	title2.data('topToContainer2', title2.offset().top - container2.data('offset').top);
 }
 function windowScrolled() {
+	scrollTopPrev = scrollTop;
 	scrollTop = win.scrollTop();
 	checkBg1();
 	checkRect1();
@@ -151,10 +157,24 @@ function checkRect1() {
 function checkBg2() {
 	var _top = container2.data('offset').top - scrollTop;
 	var _hei = container2.data('height');
-	if (_top < windowHeight * 3 / 4) {
-		container2.css('background-color', config.container_2_finalColor);
+	if (_top < windowHeight * config.bg_2_colorSwitchRate) {
+		container2.css('background-color', config.bg_2_finalColor);
 	} else {
-		container2.css('background-color', config.container_2_defaultColor);
+		container2.css('background-color', config.bg_2_defaultColor);
+	}
+	var _dy = title2.data('topToContainer2');
+	var _cond = 0;
+	if (_top <= _dy) {
+		title2.css('top', 0);
+	} else if (_top >= windowHeight + windowHeight * config.title_2_showAtRate) {
+		_cond = Math.min(config.title_2_showAtRate * windowHeight, _top - _dy);
+		title2.css('top', -1 * title2.data('dy'));
+	} else if (_top >= windowHeight) {
+		_cond = (windowHeight + windowHeight * config.title_2_showAtRate - _top) / (windowHeight * config.title_2_showAtRate);
+		title2.css('top', -1 * windowHeight * _cond);
+	} else {
+		_cond = Math.max(_top, 0) / windowHeight;
+		title2.css('top', -1 * windowHeight * _cond);
 	}
 }
 /* 
