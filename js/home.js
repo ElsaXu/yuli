@@ -177,6 +177,7 @@ function checkBg2() {
 		title2.css('top', -1 * windowHeight * _cond);
 	}
 }
+
 /* 
  * Function definition
  * End 

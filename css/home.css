@@ -81,8 +81,95 @@
 }
 
 .bg2-title-1 {
-    width: 26.1875em;
-    min-width: 315px;
+    position: relative;
+    width: 24.1875em;
+    min-width: 291px;
+    height: 17.4em;
+}
+.title-text {
+    font-size: 50px;
+    padding: 30px;
+}
+.text-first {
+    display: inline-block;
+    font-size: 146px;
+    line-height: 100%;
+    font-weight: 600;
+    color: #fff;
+}
+.text-second {
+    display: inline-block;
+    font-size: 64px;
+    line-height: 100%;
+    font-weight: bold;
+    color: #fff;
+}
+.line-top {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 6px;
+    width: 0;
+    background: #ffffff;
+}
+.line-top-animate {
+    transition: width 0.3s ease-out 6s;
+    width: 100%;
+}
+.line-right {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    height: 0px;
+    width: 6px;
+    background: #ffffff;
+}
+.line-right-animate {
+    transition: height 0.3s ease-out 9s;
+    height: 206px;
+}
+.line-bottom {
+    position: absolute;
+    z-index: 1;
+    right: 30%;
+    bottom: 0;
+    height: 6px;
+    width: 0;
+    background: #ffffff;
+}
+.line-bottom-animate {
+    transition: width 0.3s ease-out;
+    width: 70%;
+}
+.line-left {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 6px;
+    background: #ffffff;
+}
+.line-left-animate {
+    transition: height 0.3s ease-out 3s;
+    height: 206px;
+}
+.bottom-text {
+    position: absolute;
+    height: 2em;
+    width: 291px;
+    left: 155px;
+    top: 178px;
+    font-size: 54px;
+    font-weight: bold;
+    color: #fff;
+}
+.bottom-num {
+    font-size: 100px;
+    height: 100px;
+
 }
 .bg2-title-2 {
     width: 16em;
@@ -148,6 +235,7 @@
     animation: title-1-enter 0.8s ease 0.8s;
     animation-fill-mode: both;
 }
+
 @keyframes title-1-enter {
     from {top: 150%;}
     to {top: 0;}
