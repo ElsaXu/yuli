@@ -147,6 +147,7 @@ function checkRect1() {
 function checkBg2() {
 
 }
+
 /* 
  * Function definition
  * End 
