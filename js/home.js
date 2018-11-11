@@ -30,6 +30,8 @@ var config = {
 	bg_1_width: 1920,
 	bg_1_height: 2133,
 	bg_1_hideAt: 1100,
+	bg_1_heightRate: 2,
+	bg_1_followRate: 0.6,
 	rect_1_showAt: 200,
 	rect_1_hideAt: 1200,
 	rect_1_widthRate: 0.65,
@@ -85,12 +87,13 @@ function windowResized() {
 	scrollTop = win.scrollTop();
 	widthRate = windowWidth / defaultWidth;
 	body.css('font-size', (config.body_fontSize * widthRate) + 'px');
-	if (windowWidth / windowHeight >= config.bg_1_width / config.bg_1_height) {
+
+	if (windowWidth / (windowHeight * config.bg_1_heightRate) >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
 		bg1.find('img').css('width', '100%').css('height', '');
 	} else {
-		container1.css('height', windowHeight);
-		bg1.find('img').css('height', '100%').css('width', '');
+		container1.css('height', windowHeight * config.bg_1_heightRate);
+		bg1.find('img').css('height', windowHeight * config.bg_1_heightRate).css('width', '');
 		bg1.addClass('be-fixed');
 		bg1.css('top', 0);
 	}
@@ -112,7 +115,7 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > Math.min(container1.data('height') - windowHeight, _hideAt)) {
+	if (_scrollY > container1.data('height') - windowHeight * config.bg_1_followRate) {
 		if (!bg1.hasClass('be-fixed')) {
 			bg1.addClass('be-fixed');
 			bg1.css('top', -_scrollY);
