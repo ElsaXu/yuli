@@ -34,7 +34,7 @@ var config = {
 	rect_1_hideAt: 1200,
 	rect_1_widthRate: 0.65,
 	title_1_hideAt: 0,
-	container_2_defaultColor: '#ea0029',
+	container_2_defaultColor: '#000',
 	container_2_finalColor: '#b40020',
 }
 /* 
@@ -87,19 +87,21 @@ function windowResized() {
 	body.css('font-size', (config.body_fontSize * widthRate) + 'px');
 	if (windowWidth / windowHeight >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
-		container1.data.height = container1.height();
 		bg1.find('img').css('width', '100%').css('height', '');
 	} else {
 		container1.css('height', windowHeight);
-		container1.data.height = container1.height();
 		bg1.find('img').css('height', '100%').css('width', '');
 		bg1.addClass('be-fixed');
 		bg1.css('top', 0);
 	}
+	container1.data('height', container1.height());
+	rect1.data('width', rect1.width());
 	var _cHei = container2Inner.height();
 	var _maxHei = Math.max(windowHeight, _cHei);
 	container2.css('height', _maxHei);
 	container2Inner.css('top', (_maxHei - _cHei) / 2);
+	container2.data('height', container2.height());
+	container2.data('offset', container2.offset());
 }
 function windowScrolled() {
 	scrollTop = win.scrollTop();
@@ -110,7 +112,7 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > Math.min(container1.data.height - windowHeight, _hideAt)) {
+	if (_scrollY > Math.min(container1.data('height') - windowHeight, _hideAt)) {
 		if (!bg1.hasClass('be-fixed')) {
 			bg1.addClass('be-fixed');
 			bg1.css('top', -_scrollY);
@@ -130,11 +132,10 @@ function checkRect1() {
 	} else {
 		_rate = 0;
 	}
-	var _dx = _rate * rect1.width();
+	var _dx = _rate * rect1.data('width');
 	rect1.css('right', _dx);
 	checkTitle1();
 	function checkTitle1() {
-		varwindowWidth = $(window).width();
 		var _hideAt2 = config.title_1_hideAt * widthRate;
 		if (_scrollY > _hideAt2) {
 			title1.css('top', _hideAt2 - _scrollY);
@@ -145,7 +146,13 @@ function checkRect1() {
 	}
 }
 function checkBg2() {
-
+	var _top = container2.data('offset').top - scrollTop;
+	var _hei = container2.data('height');
+	if (_top < windowHeight * 3 / 4) {
+		container2.css('background-color', config.container_2_finalColor);
+	} else {
+		container2.css('background-color', config.container_2_defaultColor);
+	}
 }
 /* 
  * Function definition
