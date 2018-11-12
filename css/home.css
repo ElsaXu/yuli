@@ -39,6 +39,26 @@
     left: 80px;
 }
 
+.container2-mask-1 {
+    position: absolute;
+    background-color: #ea0029;
+    width: 100%;
+    left: 100%;
+    top: 0;
+    height: 10000px;
+    transition: left 0.1s linear;
+}
+
+.container2-mask-2 {
+    position: absolute;
+    background-color: #ea0029;
+    width: 100%;
+    bottom: -200px;
+    left: 0;
+    height: 200px;
+    transition: bottom 0.1s linear;
+}
+
 .bg2-title-1 {
     position: fixed;
     top: 100%;
@@ -291,7 +311,37 @@
 
 .container-3 {
     height: 2000px;
-    background-color: #fdfdfd;
+    background-color: #ea0029;
+    position: relative;
+    top: -5px;
+}
+.container-3 img {
+    width: 100%;
+}
+
+.bg3-title-1 {
+    width: 70%;
+    max-width: 745px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.bg3-title-2 {
+    width: 70%;
+    max-width: 552px;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+}
+
+.bg3-title-2-placeholder {
+    width: 70%;
+    max-width: 552px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
 }
 
 .rect-1 {
