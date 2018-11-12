@@ -94,6 +94,14 @@
     width: 24.1875em;
     min-width: 291px;
 }
+.square-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16.1875em;
+    min-width: 202px;
+    height: 144px;
+}
 .bg2-title-1-placeholder {
     position: relative;
     width: 24.1875em;
@@ -123,7 +131,7 @@
     z-index: 1;
     left: 0;
     top: 0;
-    height: 6px;
+    height: 4px;
     width: 0;
     background: #ffffff;
 }
@@ -137,19 +145,19 @@
     right: 0;
     top: 0;
     height: 0px;
-    width: 6px;
+    width: 4px;
     background: #ffffff;
 }
 .line-right-animate {
     transition: height 0.3s ease-out 9s;
-    height: 206px;
+    height: 140px;
 }
 .line-bottom {
     position: absolute;
     z-index: 1;
     right: 30%;
     bottom: 0;
-    height: 6px;
+    height: 4px;
     width: 0;
     background: #ffffff;
 }
@@ -163,12 +171,12 @@
     left: 0;
     bottom: 0;
     height: 0;
-    width: 6px;
+    width: 4px;
     background: #ffffff;
 }
 .line-left-animate {
     transition: height 0.3s ease-out 3s;
-    height: 206px;
+    height: 140px;
 }
 .bottom-text {
     position: absolute;
