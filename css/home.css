@@ -238,6 +238,9 @@
     position: relative;
     top: -5px;
 }
+.container-3 img {
+    width: 100%;
+}
 
 .bg3-title-1 {
     width: 70%;
@@ -246,8 +249,22 @@
     margin: 0 auto;
     padding-top: 80px;
 }
-.bg3-title-1 img {
-    width: 100%;
+
+.bg3-title-2 {
+    width: 70%;
+    max-width: 552px;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+}
+
+.bg3-title-2-placeholder {
+    width: 70%;
+    max-width: 552px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
 }
 
 .rect-1 {
