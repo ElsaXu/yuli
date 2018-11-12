@@ -197,6 +197,44 @@ function checkBg2() {
 
 	}
 }
+
+setTimeout(function() {
+	displayBg2WidgetAni();
+},5000);
+
+function displayBg2WidgetAni() {
+	// 大正方形 环绕
+	var squareTop = $('.bg2-title-1 .line-top');
+	var squareBottom = $('.bg2-title-1 .line-bottom-70');
+	var squareLeft = $('.bg2-title-1 .line-left');
+	var squareRight = $('.bg2-title-1 .line-right');
+
+	// xiao正方形 环绕
+	var square1Top = $('.square-container-1 .line-top');
+	var square1Bottom = $('.square-container-1 .line-bottom-100');
+	var square1Left = $('.square-container-1 .line-left');
+	var square1Right = $('.square-container-1 .line-right');
+
+	// 三角形 放大缩小
+	var trangle = $('.square-container-1 > .trangle');
+
+	// 大正方形 环绕
+	console.log(square1Top.length)
+	squareBottom.addClass("line-bottom-animate");
+	squareLeft.addClass("line-left-animate");
+	squareTop.addClass("line-top-animate");
+	squareRight.addClass("line-right-animate");
+
+	// 三角形 放大缩小
+	trangle.addClass("trangle-scale-ani");
+	
+	// xiao正方形 环绕
+	square1Top.addClass("line-top-animate-1");
+	square1Bottom.addClass("line-bottom-animate-1");
+	square1Left.addClass("line-left-animate-1");
+	square1Right.addClass("line-right-animate-1");
+}
+
 /* 
  * Function definition
  * End 
