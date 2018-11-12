@@ -178,19 +178,15 @@
 }
 .width-large {
     width: 8px;
-    background-color: red;
 }
 .height-large {
     height: 8px;
-    background-color: red;
 }
 .width-middle {
     width: 4px;
-    background-color: red;
 }
 .height-middle {
     height: 4px;
-    background-color: red;
 }
 .bottom-text {
     position: absolute;
