@@ -13,6 +13,7 @@ var title2Clone = $('.bg2-title-1-placeholder');
 var container2 = $('.container-2');
 var container2Inner = $('.container2-inner');
 var container2Titles = $('.container2-titles');
+var container2Mask = $('.container2-mask');
 /* 
  * Visual dom elements definition
  * End
@@ -34,7 +35,7 @@ var config = {
 	bg_1_height: 2133,
 	bg_1_hideAt: 1100,
 	bg_1_heightRate: 2,
-	bg_1_followRate: 0.6,
+	bg_1_followRate: 1,
 	rect_1_showAt: 200,
 	rect_1_hideAt: 1200,
 	rect_1_widthRate: 0.65,
@@ -53,15 +54,20 @@ var config = {
  * Init
  * Start 
  */
-win.scrollTop(0);
-windowResized();
-windowScrolled();
-// This setTimeout below is a work around for reset scroll bar in IE 
-setTimeout(function() {
-	win.scrollTop(0);
-	windowResized();
-	windowScrolled();
-}, 150);
+$(document).ready(function() {
+	// win.scrollTop(0);
+	// windowResized();
+	// windowScrolled();
+	$('body').hide();
+	// This setTimeout below is a work around for reset scroll bar in IE 
+	setTimeout(function() {
+		$('body').show();
+		win.scrollTop(0);
+		windowResized();
+		windowScrolled();
+		addEventListeners();
+	}, 150);
+});
 /* 
  * Init
  * End 
@@ -71,12 +77,14 @@ setTimeout(function() {
  * Event listener definition
  * Start 
  */ 
-win.on('resize', function() {
-	windowResized();
-});
-win.scroll(function(evt) {
-	windowScrolled();
-});
+function addEventListeners() {
+	win.on('resize', function() {
+		windowResized();
+	});
+	win.scroll(function(evt) {
+		windowScrolled();
+	});
+}
 /* 
  * Event listener definition
  * Emd 
@@ -108,6 +116,7 @@ function windowResized() {
 	var _maxHei = Math.max(windowHeight, _cHei + 100);
 	container2.css('height', _maxHei);
 	container2Inner.css('top', (_maxHei - _cHei) / 2);
+	container2.data('width', container2.width());
 	container2.data('height', container2.height());
 	container2.data('offset', container2.offset());
 	container2Inner.data('offset', container2Inner.offset());
@@ -168,6 +177,11 @@ function checkBg2() {
 	var _dy = title2.data('topToContainer2');
 	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
 		if (_top <= 0) {
+			if (title2Clone.css('opacity') === '0') {
+				if (_top > -50) {
+					title2Clone.css('top', -_top);
+				}
+			}
 			title2.hide();
 			title2Clone.css('opacity', 1);
 		} else {
@@ -193,8 +207,10 @@ function checkBg2() {
 		container2Inner.css('left', '');
 		container2.css('overflow', '');
 	}
-	if (_top + container2.data('height') < windowHeight) {
-
+	if (_top + container2.data('height') < windowHeight * 0.75) {
+		container2Mask.css('left', Math.max(0, _top + container2.data('height')) * 100 / (windowHeight * 0.75) + '%');
+	} else {
+		container2Mask.css('left', '100%');
 	}
 }
 /* 

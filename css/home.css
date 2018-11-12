@@ -40,6 +40,16 @@
     left: 80px;
 }
 
+.container2-mask {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 100%;
+    top: 0;
+    height: 10000px;
+    transition: left 0.1s linear;
+}
+
 .bg2-title-1 {
     position: fixed;
     top: 100%;
@@ -207,6 +217,8 @@
 .container-3 {
     height: 2000px;
     background-color: #fdfdfd;
+    position: relative;
+    top: -5px;
 }
 
 .rect-1 {
