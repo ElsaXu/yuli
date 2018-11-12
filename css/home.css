@@ -121,7 +121,6 @@
     z-index: 1;
     left: 0;
     top: 0;
-    height: 4px;
     width: 0;
     background: #ffffff;
 }
@@ -129,31 +128,57 @@
     transition: width 0.3s ease-out 6s;
     width: 100%;
 }
+.line-right-animate {
+    transition: height 0.3s ease-out 9s;
+    height: 140px;
+}
+.line-bottom-animate {
+    transition: width 0.3s ease-out;
+    width: 70%;
+}
+.line-left-animate {
+    transition: height 0.3s ease-out 3s;
+    height: 140px;
+}
 .line-right {
     position: absolute;
     z-index: 1;
     right: 0;
     top: 0;
     height: 0px;
-    width: 4px;
     background: #ffffff;
 }
-.line-right-animate {
-    transition: height 0.3s ease-out 9s;
-    height: 140px;
-}
-.line-bottom {
+.line-bottom-70 {
     position: absolute;
     z-index: 1;
     right: 30%;
     bottom: 0;
-    height: 4px;
     width: 0;
     background: #ffffff;
 }
-.line-bottom-animate {
-    transition: width 0.3s ease-out;
-    width: 70%;
+.line-bottom-100 {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: #ffffff;
+}
+.width-large {
+    width: 8px;
+    background-color: red;
+}
+.height-large {
+    height: 8px;
+    background-color: red;
+}
+.width-middle {
+    width: 4px;
+    background-color: red;
+}
+.height-middle {
+    height: 4px;
+    background-color: red;
 }
 .line-left {
     position: absolute;
@@ -161,12 +186,7 @@
     left: 0;
     bottom: 0;
     height: 0;
-    width: 4px;
     background: #ffffff;
-}
-.line-left-animate {
-    transition: height 0.3s ease-out 3s;
-    height: 140px;
 }
 .bottom-text {
     position: absolute;
@@ -184,8 +204,33 @@
 
 }
 .bg2-title-2 {
+    position: relative;
     width: 16em;
     min-width: 192px;
+}
+.square-container-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5em;
+    min-width: 71px;
+    height: 71px;
+}
+.line-left-animate-1 {
+    transition: height 0.3s ease-out 1.5s;
+    height: 71px;
+}
+.line-top-animate-1{
+    transition: width 0.3s ease-out;
+    width: 100%;
+}
+.line-right-animate-1 {
+    transition: height 0.3s ease-out 0.9s;
+    height: 71px;
+}
+.line-bottom-animate-1 {
+    transition: width 0.3s ease-out 1.2s;
+    width: 100%;
 }
 .bg2-image-1 {
     width: 13.9375em;
