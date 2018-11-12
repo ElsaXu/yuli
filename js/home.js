@@ -13,7 +13,8 @@ var title2Clone = $('.bg2-title-1-placeholder');
 var container2 = $('.container-2');
 var container2Inner = $('.container2-inner');
 var container2Titles = $('.container2-titles');
-var container2Mask = $('.container2-mask');
+var container2Mask1 = $('.container2-mask-1');
+var container2Mask2 = $('.container2-mask-2');
 /* 
  * Visual dom elements definition
  * End
@@ -208,9 +209,11 @@ function checkBg2() {
 		container2.css('overflow', '');
 	}
 	if (_top + container2.data('height') < windowHeight * 0.75) {
-		container2Mask.css('left', Math.max(0, _top + container2.data('height')) * 100 / (windowHeight * 0.75) + '%');
+		container2Mask1.css('left', Math.max(0, _top + container2.data('height')) * 100 / (windowHeight * 0.75) + '%');
+		container2Mask2.css('bottom', -Math.max(0, _top + container2.data('height')) * 200 / (windowHeight * 0.75) + 'px');
 	} else {
-		container2Mask.css('left', '100%');
+		container2Mask1.css('left', '100%');
+		container2Mask2.css('bottom', '-200px');
 	}
 }
 /* 

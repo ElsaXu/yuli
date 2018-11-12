@@ -40,7 +40,7 @@
     left: 80px;
 }
 
-.container2-mask {
+.container2-mask-1 {
     position: absolute;
     background-color: #ea0029;
     width: 100%;
@@ -48,6 +48,16 @@
     top: 0;
     height: 10000px;
     transition: left 0.1s linear;
+}
+
+.container2-mask-2 {
+    position: absolute;
+    background-color: #ea0029;
+    width: 100%;
+    bottom: -200px;
+    left: 0;
+    height: 200px;
+    transition: bottom 0.1s linear;
 }
 
 .bg2-title-1 {
@@ -227,6 +237,17 @@
     background-color: #ea0029;
     position: relative;
     top: -5px;
+}
+
+.bg3-title-1 {
+    width: 70%;
+    max-width: 745px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+.bg3-title-1 img {
+    width: 100%;
 }
 
 .rect-1 {
