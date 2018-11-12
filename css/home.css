@@ -42,7 +42,7 @@
 
 .container2-mask {
     position: absolute;
-    background-color: #fff;
+    background-color: #ea0029;
     width: 100%;
     left: 100%;
     top: 0;
@@ -224,7 +224,7 @@
 
 .container-3 {
     height: 2000px;
-    background-color: #fdfdfd;
+    background-color: #ea0029;
     position: relative;
     top: -5px;
 }
