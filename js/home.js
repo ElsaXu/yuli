@@ -111,10 +111,10 @@ function windowResized() {
 	if (windowWidth / (windowHeight * config.bg_1_heightRate) >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
 		bg1.find('img').css('width', '100%').css('height', '');
+		bg1.css('top', -scrollTop);
 	} else {
 		container1.css('height', windowHeight * config.bg_1_heightRate);
 		bg1.find('img').css('height', windowHeight * config.bg_1_heightRate).css('width', '');
-		bg1.addClass('be-fixed');
 		bg1.css('top', 0);
 	}
 	container1.data('height', container1.height());
@@ -153,14 +153,10 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > container1.data('height') - windowHeight * config.bg_1_followRate) {
-		if (!bg1.hasClass('be-fixed')) {
-			bg1.addClass('be-fixed');
-			bg1.css('top', -_scrollY);
-		}
+	if (_scrollY >= container1.data('height') - windowHeight * config.bg_1_followRate) {
+		bg1.css('top', -container1.data('height') + windowHeight * config.bg_1_followRate);
 	} else {
-		if (bg1.hasClass('be-fixed')) bg1.removeClass('be-fixed');
-		bg1.css('top', 0);
+		bg1.css('top', -_scrollY);
 	}
 }
 function checkRect1() {
@@ -254,7 +250,7 @@ function checkBg3() {
 	} else if (_top <= windowHeight - _bg3StartAt) {
 		// show bg3
 		bg3.css('transform', 'scale(1, 1)');
-		bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 0.5);
+		bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 1);
 	} else {
 		bg3.css('transform', 'scale(0.2, 0.2)');
 		bg3.css('top', windowHeight);
