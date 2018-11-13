@@ -101,7 +101,7 @@ function addEventListeners() {
  * Start 
  */ 
 function windowResized() {
-	win.scrollTop(0);
+	//win.scrollTop(0);
 	windowWidth = win.width();
 	windowHeight = win.height();
 	scrollTop = win.scrollTop();
@@ -202,9 +202,9 @@ function checkBg2() {
 	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
 		if (_top <= 0) {
 			if (title2Clone.css('opacity') === '0') {
-				if (_top > -50) {
-					title2Clone.css('top', -_top);
-				}
+				//if (_top > -50) {
+					//title2Clone.css('top', -_top);
+				//}
 			}
 			title2.css('opacity', 0);
 			title2Clone.css('opacity', 1);
@@ -223,14 +223,14 @@ function checkBg2() {
 			container2Inner.css('top', container2Inner.data('offset').top - scrollTop);
 		}
 		container2Inner.css('left', container2Inner.data('offset').left);
-		container2.css('overflow', 'hidden');
+		//container2.css('overflow', 'hidden');
 	} else {
 		if (container2Inner.hasClass('be-fixed')) {
 			container2Inner.removeClass('be-fixed');
 		}
 		container2Inner.css('top', container2Inner.data('topToContainer2'));
 		container2Inner.css('left', '');
-		container2.css('overflow', '');
+		//container2.css('overflow', '');
 	}
 	if (_top + container2.data('height') < windowHeight * 0.75) {
 		container2Mask1.css('left', Math.max(0, _top + container2.data('height')) * 100 / (windowHeight * 0.75) + '%');
