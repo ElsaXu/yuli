@@ -66,7 +66,7 @@
 .bg2-title-1 {
     position: fixed;
     top: 100%;
-    transition: top 1s;
+    transition: top 1s ;
 }
 
 .bg2-title-2 {
@@ -333,7 +333,9 @@
     max-width: 552px;
     text-align: center;
     position: fixed;
+    z-index: 1;
     top: 30%;
+    transition: top 0.1s linear;
 }
 
 .bg3-title-2-placeholder {
@@ -343,6 +345,15 @@
     position: relative;
     top: 0;
     margin: 0 auto;
+}
+
+.bg3-image {
+    width: 95%;
+    left: 2.5%;
+    top: 95%;
+    position: fixed;
+    transform: scale(0.2, 0.2);
+    transition: transform 1s linear, top 0.1s linear;
 }
 
 .rect-1 {

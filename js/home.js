@@ -18,7 +18,7 @@ var container2Mask2 = $('.container2-mask-2');
 var container3 = $('.container-3');
 var container3Inner = $('.container3-inner');
 var title3 = $('.bg3-title-2');
-var title3Clone = $('.bg3-title-2-placeholder');
+var bg3 = $(".bg3-image");
 /* 
  * Visual dom elements definition
  * End
@@ -130,21 +130,17 @@ function windowResized() {
 	container2Inner.data('offset', container2Inner.offset());
 	container2Inner.data('topToContainer2', (_maxHei - _cHei) / 2);
 	title2.data('topToContainer2', container2Titles.offset().top - container2.data('offset').top);
-	_cHei = container3Inner.height();
-	_maxHei = Math.max(windowHeight * 3, _cHei * 2);
+	bg3.data('width', bg3.width());
+	bg3.data('height', bg3.height());
+	_maxHei = Math.max(windowHeight * 2, bg3.data('height') * 3);
 	container3.css('height', _maxHei);
 	container3.data('width', container3.width());
 	container3.data('height', _maxHei);
 	container3.data('offset', container3.offset());
 	title3.show(); //reset title3, title3Clone
-	title3Clone.show();
-	title3Clone.css('top', 0);
-	title3Clone.data('offset', title3Clone.offset());
-	title3.data('offset', title3Clone.offset());
-	title3.data('topToContainer3', title3.offset().top);
-	title3.css('left', title3Clone.data('offset').left);
+	title3.data('offset', title3.offset());
+	title3.css('left', (windowWidth - title3.width()) / 2);
 	title3.hide();
-	title3Clone.hide();
 }
 function windowScrolled() {
 	scrollTopPrev = scrollTop;
@@ -242,16 +238,26 @@ function checkBg2() {
 }
 function checkBg3() {
 	var _top = container3.data('offset').top - scrollTop;
-	if (_top <= -windowHeight * 1.5) {
-		title3.hide();
-		if (title3Clone.css('display') === 'none') title3Clone.css('top', title3.data('topToContainer3') - title3Clone.data('offset').top + scrollTop);
-		title3Clone.show();
-	} else if (_top <= 0){
+	if (_top <= -windowHeight / 3) {
+		title3.css('top', windowHeight * 0.3 + (_top + windowHeight) * 0.2);
+	} else {
+		title3.css('top', '30%');
+	}
+	if (_top <= -windowHeight / 3){
 		title3.show();
-		title3Clone.hide();
 	} else {
 		title3.hide();
-		title3Clone.hide();
+	}
+	var _bg3StartAt = Math.min(windowHeight * 0.75, bg3.data('height') * 1);
+	if (_top + container3.data('height') <= windowHeight) {
+
+	} else if (_top <= windowHeight - _bg3StartAt) {
+		// show bg3
+		bg3.css('transform', 'scale(1, 1)');
+		bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 0.5);
+	} else {
+		bg3.css('transform', 'scale(0.2, 0.2)');
+		bg3.css('top', windowHeight);
 	}
 }
 
