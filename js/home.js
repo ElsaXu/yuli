@@ -15,6 +15,7 @@ var container2Inner = $('.container2-inner');
 var container2Titles = $('.container2-titles');
 var container2Mask1 = $('.container2-mask-1');
 var container2Mask2 = $('.container2-mask-2');
+var container2Texts = [$('.bg2-text-1'), $('.bg2-text-2'), $('.bg2-text-3')];
 var container3 = $('.container-3');
 var container3Inner = $('.container3-inner');
 var title3 = $('.bg3-title-2');
@@ -121,7 +122,7 @@ function windowResized() {
 	rect1.data('width', rect1.width());
 	var _cHei = container2Inner.height();
 	var _maxHei = Math.max(windowHeight, _cHei + 100);
-	container2.css('height', _maxHei);
+	container2.css('height', _maxHei + 50);
 	container2.data('width', container2.width());
 	container2.data('height', container2.height());
 	container2.data('offset', container2.offset());
@@ -131,6 +132,9 @@ function windowResized() {
 	title2Clone.css('width', title2.width());
 	title2Clone.css('height', title2.height());
 	title2.data('topToContainer2', container2Inner.data('topToContainer2') + 30);
+	for (var i = 0; i < container2Texts.length; i++) {
+		container2Texts[i].data('topToContainer2', container2Texts[i].offset().top - container2Inner.offset().top + container2Inner.data('topToContainer2'));
+	}
 	bg3.data('width', bg3.width());
 	bg3.data('height', bg3.height());
 	_maxHei = Math.max(windowHeight * 2, bg3.data('height') * 3);
@@ -223,6 +227,13 @@ function checkBg2() {
 		container2Mask1.css('left', '100%');
 		container2Mask2.css('bottom', '-200px');
 	}
+	for (var i = 0; i < container2Texts.length; i++) {
+		if (container2Texts[i].data('topToContainer2') + _top <= windowHeight - 150) {
+			container2Texts[i].css('top', 0).css('opacity', 1);
+		} else {
+			container2Texts[i].css('top', 100).css('opacity', 0);
+		}
+	} 
 }
 function checkBg3() {
 	var _top = container3.data('offset').top - scrollTop;
@@ -242,7 +253,7 @@ function checkBg3() {
 	} else if (_top <= windowHeight - _bg3StartAt) {
 		// show bg3
 		bg3.css('transform', 'scale(1, 1)');
-		bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 1);
+		bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 0.5);
 	} else {
 		bg3.css('transform', 'scale(0.2, 0.2)');
 		bg3.css('top', windowHeight);

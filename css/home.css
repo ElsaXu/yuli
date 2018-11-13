@@ -35,6 +35,7 @@
 .container2-inner {
     width: 50%;
     position: fixed;
+    overflow: hidden;
     transition: top 0.1s linear;
 }
 
@@ -91,7 +92,6 @@
 
 .container2-texts {
     width: 100%;
-    overflow: hidden;
 }
 .container2-texts img:last-child {
     margin-left: 0.75em;
@@ -109,10 +109,11 @@
     position: relative;
     margin-bottom: 24px;
     overflow: hidden;
+    transition: top 0.5s, opacity 1s;
 }
 .bg2-text>div {
     float: left;
-    margin-left: 24px;
+    margin-right: 24px;
 }
 
 .bg2-text-2 {
