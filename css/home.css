@@ -2,6 +2,7 @@
 .container {
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .container-1 {
@@ -25,6 +26,9 @@
     background-color: #ea0029;
     box-sizing: content-box;
     transition: background-color 1s;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .container2-inner {
@@ -310,6 +314,7 @@
     background-color: #ea0029;
     position: relative;
     top: -5px;
+    z-index: 2;
 }
 .container-3 img {
     width: 100%;
@@ -378,6 +383,7 @@
 
 .be-fixed {
     position: fixed;
+    z-index: 0;
 }
 
 .menu {
