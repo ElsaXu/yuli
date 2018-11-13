@@ -67,7 +67,12 @@
 .bg2-title-1 {
     position: fixed;
     top: 100%;
+}
+.bg2-title-1-long-ani {
     transition: top 1s ;
+}
+.bg2-title-1-short-ani {
+    transition: top 0.1s linear ;
 }
 
 .bg2-title-2 {

@@ -129,6 +129,8 @@ function windowResized() {
 	container2Inner.css('top', (_maxHei - _cHei) / 2);
 	container2Inner.data('offset', container2Inner.offset());
 	container2Inner.data('topToContainer2', (_maxHei - _cHei) / 2);
+	title2Clone.css('width', title2.width());
+	title2Clone.css('height', title2.height());
 	title2.data('topToContainer2', container2Titles.offset().top - container2.data('offset').top);
 	bg3.data('width', bg3.width());
 	bg3.data('height', bg3.height());
@@ -193,36 +195,35 @@ function checkBg2() {
 	var _dy = title2.data('topToContainer2');
 	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
 		if (_top <= 0) {
-			if (title2Clone.css('opacity') === '0') {
-				//if (_top > -50) {
-					//title2Clone.css('top', -_top);
-				//}
+			if (title2.hasClass('bg2-title-1-long-ani')) {
+				title2.removeClass('bg2-title-1-long-ani').addClass('bg2-title-1-short-ani');
 			}
-			title2.css('opacity', 0);
-			title2Clone.css('opacity', 1);
+			title2.css('top', _top + title2.data('topToContainer2'));
 		} else {
-			title2.css('opacity', 1);
-			title2Clone.css('opacity', 0);
+			if (title2.hasClass('bg2-title-1-short-ani')) {
+				title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
+			}
+			title2.css('top', title2.data('topToContainer2'));
 		}
-		title2.css('top', title2.data('topToContainer2'));
 	} else {
-		title2.css('opacity', 1);
+		if (!title2.hasClass('bg2-title-1-long-ani')) {
+			title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
+		}
 		title2.css('top', '120%');
 	}
-	if (_top + container2.data('height') < windowHeight) {
+	if (_top + container2.data('height') <= windowHeight) {
 		if (!container2Inner.hasClass('be-fixed')) {
 			container2Inner.addClass('be-fixed');
 			container2Inner.css('top', container2Inner.data('offset').top - scrollTop);
 		}
 		container2Inner.css('left', container2Inner.data('offset').left);
-		//container2.css('overflow', 'hidden');
+		title2.css('top', windowHeight - container2.data('height') + title2.data('topToContainer2'));
 	} else {
 		if (container2Inner.hasClass('be-fixed')) {
 			container2Inner.removeClass('be-fixed');
 		}
 		container2Inner.css('top', container2Inner.data('topToContainer2'));
 		container2Inner.css('left', '');
-		//container2.css('overflow', '');
 	}
 	if (_top + container2.data('height') < windowHeight * 0.75) {
 		container2Mask1.css('left', Math.max(0, _top + container2.data('height')) * 100 / (windowHeight * 0.75) + '%');
