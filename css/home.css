@@ -107,6 +107,11 @@
     width: 24.1875em;
     min-width: 291px;
 }
+.bg2-title-text {
+    display: inline-block;
+    width: 71px;
+    height: 20px;
+}
 .square-container {
     position: absolute;
     top: 0;
@@ -218,33 +223,35 @@
     height: 0px;
     top: 0;
     left: 0;
-    background: red;
 }
 .bg2-text-ani {
     transition: width 0.3s ease-in 1.2s;
-    width: 71px;
+    width: 96px;
+    margin-right: 10px;
 }
 .square-container-1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 5em;
+    width: 71px;
     min-width: 71px;
     height: 71px;
+    position: relative;
+    display: inline-block;
 }
-.trangle {
+.trangle-container {
     position: absolute;
     right: 14px;
     top: 14px;
     width: 16px;
     height: 16px;
-    background: red;
 
 }
+.trangle-container img {
+    height: 100%;
+    width: 100%;
+}
 @keyframes trangle-scale {
-    0 {transform: scale3d(1); -webkit-transform: scale3d(1); -ms-transform: scale3d(1); -mos-transform: scale3d(1));}
-    50% {transform: scale3d(1.2); -webkit-transform: scale3d(1.2); -ms-transform: scale3d(1.2); -mos-transform: scale3d(1.2);}
-    100% {transform: scale3d(1); -webkit-transform: scale3d(1); -ms-transform: scale3d(1); -mos-transform: scale3d(1);}
+    0 {transform: scale(1); -webkit-transform: scale(1); -ms-transform: scale(1); -mos-transform: scale(1));}
+    50% {transform: scale(1.2); -webkit-transform: scale(1.2); -ms-transform: scale(1.2); -mos-transform: scale(1.2);}
+    100% {transform: scale(1); -webkit-transform: scale(1); -ms-transform: scale(1); -mos-transform: scale(1);}
     }
 }
 
@@ -265,8 +272,8 @@
     height: 140px;
 }
 .trangle-scale-ani {
-    animation: trangle-scale 2s;
-    animation-fill-mode: forward;
+    animation: trangle-scale 0.5s ease-in;;
+    animation-fill-mode: both;
 }
 .line-left-animate-1 {
     transition: height 0.3s ease-out 1.5s;
@@ -366,7 +373,7 @@
     overflow: hidden;
     transition: right 0.2s linear;
     animation: rect-1-enter 0.8s;
-    animation-fill-mode: forward;
+    animation-fill-mode: forwards;
 }
 @keyframes rect-1-enter {
     from {transform: translateX(100%); -webkit-transform: translateX(100%); -ms-transform: translateX(100%); -mos-transform: translateX(100%);}
