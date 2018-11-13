@@ -34,8 +34,8 @@
 
 .container2-inner {
     width: 50%;
-    margin: 0 auto;
-    position: relative;
+    position: fixed;
+    transition: top 0.1s linear;
 }
 
 .container2-titles {
@@ -67,12 +67,22 @@
 .bg2-title-1 {
     position: fixed;
     top: 100%;
+    z-index: 1;
+    width: 24.1875em;
+    min-width: 291px;
 }
 .bg2-title-1-long-ani {
     transition: top 1s ;
 }
 .bg2-title-1-short-ani {
     transition: top 0.1s linear ;
+}
+
+.bg2-title-1-placeholder {
+    position: relative;
+    width: 24.1875em;
+    min-width: 291px;
+    opacity: 0;
 }
 
 .bg2-title-2 {
@@ -109,10 +119,6 @@
     left: 5em;
 }
 
-.bg2-title-1 {
-    width: 24.1875em;
-    min-width: 291px;
-}
 .bg2-title-text {
     display: inline-block;
     width: 71px;
@@ -126,12 +132,7 @@
     min-width: 202px;
     height: 144px;
 }
-.bg2-title-1-placeholder {
-    position: relative;
-    width: 24.1875em;
-    min-width: 291px;
-    opacity: 0;
-}
+
 .title-text {
     font-size: 50px;
     padding: 30px;
