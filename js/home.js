@@ -273,7 +273,7 @@ function displayBg2WidgetAni() {
 	var square1Right = $('.square-container-1 .line-right');
 
 	// 三角形 放大缩小
-	var trangle = $('.square-container-1 > .trangle');
+	var trangle = $('.square-container-1 > .trangle-container');
 
 	// 大正方形 环绕
 	console.log(square1Top.length)
