@@ -3,7 +3,8 @@
  * Start 
  */ 
 var win = $(window);
-var body = $('html');
+var html = $('html');
+var body = $('body');
 var container1 = $('.container-1');
 var rect1 = $('.rect-1');
 var bg1 = $('.bg-1');
@@ -108,7 +109,7 @@ function windowResized() {
 	windowHeight = win.height();
 	scrollTop = win.scrollTop();
 	widthRate = windowWidth / defaultWidth;
-	body.css('font-size', (config.body_fontSize * widthRate) + 'px');
+	html.css('font-size', (config.body_fontSize * widthRate) + 'px');
 
 	if (windowWidth / (windowHeight * config.bg_1_heightRate) >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
@@ -120,6 +121,7 @@ function windowResized() {
 		bg1.css('top', 0);
 	}
 	container1.data('height', container1.height());
+	container1.data('toTop', 0);
 	rect1.data('width', rect1.width());
 	var _cHei = container2Inner.height();
 	var _maxHei = Math.max(windowHeight, _cHei + 100);
@@ -127,6 +129,7 @@ function windowResized() {
 	container2.data('width', container2.width());
 	container2.data('height', container2.height());
 	container2.data('offset', container2.offset());
+	container2.data('toTop', container1.data('height'));
 	container2Inner.data('topToContainer2', (_maxHei - _cHei) / 2);
 	container2Inner.css('left', (windowWidth - container2Inner.width()) / 2);
 	//container2Inner.data('offset', container2Inner.offset());
@@ -143,12 +146,14 @@ function windowResized() {
 	container3.data('width', container3.width());
 	container3.data('height', _maxHei);
 	container3.data('offset', container3.offset());
+	container3.data('toTop', container2.data('toTop') + container2.data('height'));
 	title3.show(); //reset title3, title3Clone
 	title3.data('offset', title3.offset());
 	title3.css('left', (windowWidth - title3.width()) / 2);
 	title3.hide();
 	title4.data('topToContainer2', 80);
 	title4.css('left', (windowWidth - title4.width()) / 2);
+	body.css('height', container3.data('toTop') + container3.data('height'));
 }
 function windowScrolled() {
 	scrollTopPrev = scrollTop;
@@ -189,10 +194,12 @@ function checkRect1() {
 		}
 		title1.css('left', _dx);
 	}
+	container1.css('top', _scrollY);
 }
 function checkBg2() {
-	var _top = container2.data('offset').top - scrollTop;
+	var _top = container2.data('toTop') - scrollTop;
 	var _hei = container2.data('height');
+	container2.css('top', _top);
 	if (_top < windowHeight * config.bg_2_colorSwitchRate) {
 		container2.css('background-color', config.bg_2_finalColor);
 	} else {
@@ -240,7 +247,8 @@ function checkBg2() {
 	} 
 }
 function checkBg3() {
-	var _top = container3.data('offset').top - scrollTop;
+	var _top = container3.data('toTop') - scrollTop;
+	container3.css('top', _top);
 	if (_top <= -windowHeight / 3) {
 		title3.css('top', windowHeight * 0.3 + (_top + windowHeight) * 0.2);
 	} else {
