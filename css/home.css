@@ -14,9 +14,10 @@
 .bg-1 {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    transition: top 0.1s linear;
 }
 .bg-1 img {
     
@@ -33,8 +34,9 @@
 
 .container2-inner {
     width: 50%;
-    margin: 0 auto;
-    position: relative;
+    position: fixed;
+    overflow: hidden;
+    transition: top 0.1s linear;
 }
 
 .container2-titles {
@@ -66,7 +68,22 @@
 .bg2-title-1 {
     position: fixed;
     top: 100%;
+    z-index: 1;
+    width: 24.1875em;
+    min-width: 291px;
+}
+.bg2-title-1-long-ani {
     transition: top 1s ;
+}
+.bg2-title-1-short-ani {
+    transition: top 0.1s linear ;
+}
+
+.bg2-title-1-placeholder {
+    position: relative;
+    width: 24.1875em;
+    min-width: 291px;
+    opacity: 0;
 }
 
 .bg2-title-2 {
@@ -75,7 +92,6 @@
 
 .container2-texts {
     width: 100%;
-    overflow: hidden;
 }
 .container2-texts img:last-child {
     margin-left: 0.75em;
@@ -93,20 +109,17 @@
     position: relative;
     margin-bottom: 24px;
     overflow: hidden;
+    transition: top 0.5s, opacity 1s;
 }
 .bg2-text>div {
     float: left;
-    margin-left: 24px;
+    margin-right: 24px;
 }
 
 .bg2-text-2 {
     left: 5em;
 }
 
-.bg2-title-1 {
-    width: 24.1875em;
-    min-width: 291px;
-}
 .bg2-title-text {
     display: inline-block;
     width: 71px;
@@ -120,12 +133,7 @@
     min-width: 202px;
     height: 144px;
 }
-.bg2-title-1-placeholder {
-    position: relative;
-    width: 24.1875em;
-    min-width: 291px;
-    opacity: 0;
-}
+
 .title-text {
     font-size: 50px;
     padding: 30px;

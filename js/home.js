@@ -15,6 +15,7 @@ var container2Inner = $('.container2-inner');
 var container2Titles = $('.container2-titles');
 var container2Mask1 = $('.container2-mask-1');
 var container2Mask2 = $('.container2-mask-2');
+var container2Texts = [$('.bg2-text-1'), $('.bg2-text-2'), $('.bg2-text-3')];
 var container3 = $('.container-3');
 var container3Inner = $('.container3-inner');
 var title3 = $('.bg3-title-2');
@@ -111,25 +112,29 @@ function windowResized() {
 	if (windowWidth / (windowHeight * config.bg_1_heightRate) >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
 		bg1.find('img').css('width', '100%').css('height', '');
+		bg1.css('top', -scrollTop);
 	} else {
 		container1.css('height', windowHeight * config.bg_1_heightRate);
 		bg1.find('img').css('height', windowHeight * config.bg_1_heightRate).css('width', '');
-		bg1.addClass('be-fixed');
 		bg1.css('top', 0);
 	}
 	container1.data('height', container1.height());
 	rect1.data('width', rect1.width());
 	var _cHei = container2Inner.height();
 	var _maxHei = Math.max(windowHeight, _cHei + 100);
-	container2.css('height', _maxHei);
+	container2.css('height', _maxHei + 50);
 	container2.data('width', container2.width());
 	container2.data('height', container2.height());
 	container2.data('offset', container2.offset());
-	container2Inner.removeClass('be-fixed').css('left', ''); //reset container2Inner
-	container2Inner.css('top', (_maxHei - _cHei) / 2);
-	container2Inner.data('offset', container2Inner.offset());
 	container2Inner.data('topToContainer2', (_maxHei - _cHei) / 2);
-	title2.data('topToContainer2', container2Titles.offset().top - container2.data('offset').top);
+	container2Inner.css('left', (windowWidth - container2Inner.width()) / 2);
+	//container2Inner.data('offset', container2Inner.offset());
+	title2Clone.css('width', title2.width());
+	title2Clone.css('height', title2.height());
+	title2.data('topToContainer2', container2Inner.data('topToContainer2') + 30);
+	for (var i = 0; i < container2Texts.length; i++) {
+		container2Texts[i].data('topToContainer2', container2Texts[i].offset().top - container2Inner.offset().top + container2Inner.data('topToContainer2'));
+	}
 	bg3.data('width', bg3.width());
 	bg3.data('height', bg3.height());
 	_maxHei = Math.max(windowHeight * 2, bg3.data('height') * 3);
@@ -153,14 +158,10 @@ function windowScrolled() {
 function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
-	if (_scrollY > container1.data('height') - windowHeight * config.bg_1_followRate) {
-		if (!bg1.hasClass('be-fixed')) {
-			bg1.addClass('be-fixed');
-			bg1.css('top', -_scrollY);
-		}
+	if (_scrollY >= container1.data('height') - windowHeight * config.bg_1_followRate) {
+		bg1.css('top', -container1.data('height') + windowHeight * config.bg_1_followRate);
 	} else {
-		if (bg1.hasClass('be-fixed')) bg1.removeClass('be-fixed');
-		bg1.css('top', 0);
+		bg1.css('top', -_scrollY);
 	}
 }
 function checkRect1() {
@@ -197,36 +198,27 @@ function checkBg2() {
 	var _dy = title2.data('topToContainer2');
 	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
 		if (_top <= 0) {
-			if (title2Clone.css('opacity') === '0') {
-				//if (_top > -50) {
-					//title2Clone.css('top', -_top);
-				//}
+			if (title2.hasClass('bg2-title-1-long-ani')) {
+				title2.removeClass('bg2-title-1-long-ani').addClass('bg2-title-1-short-ani');
 			}
-			title2.css('opacity', 0);
-			title2Clone.css('opacity', 1);
+			title2.css('top', _top + title2.data('topToContainer2'));
 		} else {
-			title2.css('opacity', 1);
-			title2Clone.css('opacity', 0);
+			if (title2.hasClass('bg2-title-1-short-ani')) {
+				title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
+			}
+			title2.css('top', title2.data('topToContainer2'));
 		}
-		title2.css('top', title2.data('topToContainer2'));
 	} else {
-		title2.css('opacity', 1);
+		if (!title2.hasClass('bg2-title-1-long-ani')) {
+			title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
+		}
 		title2.css('top', '120%');
 	}
-	if (_top + container2.data('height') < windowHeight) {
-		if (!container2Inner.hasClass('be-fixed')) {
-			container2Inner.addClass('be-fixed');
-			container2Inner.css('top', container2Inner.data('offset').top - scrollTop);
-		}
-		container2Inner.css('left', container2Inner.data('offset').left);
-		//container2.css('overflow', 'hidden');
+	if (_top + container2.data('height') <= windowHeight) {
+		container2Inner.css('top', windowHeight - container2.data('height') + container2Inner.data('topToContainer2'));
+		title2.css('top', windowHeight - container2.data('height') + title2.data('topToContainer2'));
 	} else {
-		if (container2Inner.hasClass('be-fixed')) {
-			container2Inner.removeClass('be-fixed');
-		}
-		container2Inner.css('top', container2Inner.data('topToContainer2'));
-		container2Inner.css('left', '');
-		//container2.css('overflow', '');
+		container2Inner.css('top', container2Inner.data('topToContainer2') + _top);
 	}
 	if (_top + container2.data('height') < windowHeight * 0.75) {
 		container2Mask1.css('left', Math.max(0, _top + container2.data('height')) * 100 / (windowHeight * 0.75) + '%');
@@ -235,6 +227,13 @@ function checkBg2() {
 		container2Mask1.css('left', '100%');
 		container2Mask2.css('bottom', '-200px');
 	}
+	for (var i = 0; i < container2Texts.length; i++) {
+		if (container2Texts[i].data('topToContainer2') + _top <= windowHeight - 150) {
+			container2Texts[i].css('top', 0).css('opacity', 1);
+		} else {
+			container2Texts[i].css('top', 100).css('opacity', 0);
+		}
+	} 
 }
 function checkBg3() {
 	var _top = container3.data('offset').top - scrollTop;
