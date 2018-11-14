@@ -206,6 +206,7 @@ function checkBg2() {
 			if (title2.hasClass('bg2-title-1-short-ani')) {
 				title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
 			}
+			displayBg2WidgetAni();
 			title2.css('top', title2.data('topToContainer2'));
 		}
 	} else {
@@ -260,9 +261,9 @@ function checkBg3() {
 	}
 }
 
-setTimeout(function() {
-	displayBg2WidgetAni();
-},5000);
+// setTimeout(function() {
+// 	displayBg2WidgetAni();
+// },5000);
 
 function displayBg2WidgetAni() {
 	// 大正方形 环绕
