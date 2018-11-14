@@ -169,16 +169,13 @@
     left: 0;
     top: 0;
     width: 0;
-    background: #ffffff;
 }
-
 .line-right {
     position: absolute;
     z-index: 1;
     right: 0;
     top: 0;
     height: 0px;
-    background: #ffffff;
 }
 .line-left {
     position: absolute;
@@ -186,7 +183,12 @@
     left: 0;
     bottom: 0;
     height: 0;
+}
+.line-color-white {
     background: #ffffff;
+}
+.line-color-yellow {
+    background: grey;
 }
 .line-top-reverse {
     position: absolute;
@@ -194,7 +196,6 @@
     right: 0;
     top: 0;
     width: 0;
-    background: #ffffff;
 }
 
 .line-right-reverse {
@@ -203,7 +204,6 @@
     right: 0;
     bottom: 0;
     height: 0px;
-    background: #ffffff;
 }
 .line-left-reverse {
     position: absolute;
@@ -211,7 +211,6 @@
     left: 0;
     top: 0;
     height: 0;
-    background: #ffffff;
 }
 .line-bottom-70 {
     position: absolute;
@@ -219,7 +218,6 @@
     right: 30%;
     bottom: 0;
     width: 0;
-    background: #ffffff;
 }
 .line-bottom-100 {
     position: absolute;
@@ -227,7 +225,6 @@
     left: 0;
     bottom: 0;
     width: 0;
-    background: #ffffff;
 }
 .width-large {
     width: 0.625em;
@@ -274,6 +271,9 @@
     height: 71px;
     position: relative;
     display: inline-block;
+}
+.square-container-yellow {
+    background-color: yellow;
 }
 .trangle-container {
     position: absolute;
