@@ -9,6 +9,8 @@
     height: 2133px;
     background-color: #fefefe;
     overflow: hidden;
+    position: fixed;
+    transition: top 0.1s linear;
 }
 
 .bg-1 {
@@ -28,8 +30,9 @@
     box-sizing: content-box;
     transition: background-color 1s;
     overflow-x: hidden;
-    position: relative;
+    position: fixed;
     z-index: 1;
+    transition: top 0.1s linear;
 }
 
 .container2-inner {
@@ -363,9 +366,10 @@
 .container-3 {
     height: 2000px;
     background-color: #ea0029;
-    position: relative;
+    position: fixed;
     top: -5px;
     z-index: 2;
+    transition: top 0.1s linear;
 }
 .container-3 img {
     width: 100%;
