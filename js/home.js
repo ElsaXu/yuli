@@ -272,23 +272,26 @@ function displayBg2WidgetAni() {
 	var squareRight = $('.bg2-title-1 .line-right');
 
 	// xiao正方形 环绕
-	var square1Top = $('.square-container-1 .line-top');
+	var square1Top = $('.square-container-1 .line-top-reverse');
 	var square1Bottom = $('.square-container-1 .line-bottom-100');
-	var square1Left = $('.square-container-1 .line-left');
-	var square1Right = $('.square-container-1 .line-right');
+	var square1Left = $('.square-container-1 .line-left-reverse');
+	var square1Right = $('.square-container-1 .line-right-reverse');
 
 	// 三角形 放大缩小
 	var trangle = $('.square-container-1 > .trangle-container');
+	//  small text
+	var smallText = $('.bg2-title-2 .bg2-text-mask');
 
 	// 大正方形 环绕
-	console.log(square1Top.length)
+	console.log(square1Top.length);
+	squareTop.addClass("line-top-animate");
 	squareBottom.addClass("line-bottom-animate");
 	squareLeft.addClass("line-left-animate");
-	squareTop.addClass("line-top-animate");
 	squareRight.addClass("line-right-animate");
 
 	// 三角形 放大缩小
 	trangle.addClass("trangle-scale-ani");
+	smallText.addClass("bg2-text-ani");
 	
 	// xiao正方形 环绕
 	square1Top.addClass("line-top-animate-1");
