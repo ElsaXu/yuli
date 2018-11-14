@@ -261,9 +261,10 @@ function checkBg3() {
 	}
 }
 
-// setTimeout(function() {
-// 	displayBg2WidgetAni();
-// },5000);
+setTimeout(function() {
+	var bg3title2 = $('.bg3-title-2 .bg3-title-mask');
+	bg3title2.addClass("bg3-title-ani");
+},5000);
 
 function displayBg2WidgetAni() {
 	// 大正方形 环绕

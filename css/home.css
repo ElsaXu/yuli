@@ -331,8 +331,8 @@
     transition: width 0.2s ease-out 1.5s;
     width: 100%;
 }
-.bg2-text-ani {
-    transition: width 1s ease-in;
+.bg3-title-ani {
+    transition: width 1s ease-in 0.5s;
     width: 0px;
 }
 .bg2-image-1 {
@@ -388,6 +388,13 @@
     top: 30%;
     transition: top 0.1s linear;
 }
+.bg3-title-mask {
+    position: absolute;
+    height: 100%;
+    width: 45em;
+    top: 0;
+    right: 0;
+}
 .bg3-title-2-placeholder {
     width: 70%;
     max-width: 552px;
@@ -405,7 +412,10 @@
     transform: scale(0.2, 0.2);
     transition: transform 1s linear, top 0.1s linear;
 }
-
+.bg2-text-ani {
+    transition: width 1s ease-in;
+    width: 0px;
+}
 .container-4 {
     height: 1000px;
     background-color: grey;
