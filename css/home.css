@@ -135,7 +135,7 @@
    position: absolute; 
    top: 0;
    right: 0;
-   background-color: #a52128;
+   /*background-color: #fff;*/
    height: 100%;
    width: 9.5em;
 }
@@ -191,7 +191,7 @@
     background: #ffffff;
 }
 .line-color-yellow {
-    background: grey;
+    background: #cda886;
 }
 .line-top-reverse {
     position: absolute;
@@ -276,7 +276,7 @@
     display: inline-block;
 }
 .square-container-yellow {
-    background-color: yellow;
+    background-color: #f2e9e0;
 }
 .trangle-container {
     position: absolute;
@@ -429,7 +429,7 @@
     background-color: #d4a781;
     position: fixed;
     top: -5px;
-    z-index: 3;
+    z-index: 10;
     transition: top 0.1s linear;
 }
 .container-4 img {
@@ -440,9 +440,10 @@
     width: 90em;
     max-width: 1200px;
     min-width: 320px;
+    height: 35em;
     position: fixed;
     background-color: #fff;
-    overflow: hidden;
+    //overflow: hidden;
     transition: top 0.1s linear;
 }
 
@@ -450,18 +451,29 @@
     width: 14.6875em;
     max-width: 235px;
     min-width: 118px;
+    display: inline-block;
+    height: 10em;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 10em;
+    margin-top: 5em;
 }
 
 .bg4-title-2 {
-    width: 16.375;
+    width: 16.375em;
     max-width: 262px;
     min-width: 131px;
+    float: right;
+    overflow: hidden;
+    margin: 5em 5em 0;
+
 }
 
 .bg4-image-container {
     width: 75em;
     max-width: 1008px;
     margin: 0 auto;
+
 }
 
 .bg4-image-box {
