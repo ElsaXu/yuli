@@ -432,11 +432,14 @@
     z-index: 3;
     transition: top 0.1s linear;
 }
+.container-4 img {
+    width: 100%;
+}
 
 .container4-inner {
-    width: 75em;
+    width: 90em;
     max-width: 1200px;
-    min-width: 500px;
+    min-width: 320px;
     position: fixed;
     background-color: #fff;
     overflow: hidden;
@@ -444,15 +447,28 @@
 }
 
 .bg4-title-1 {
-    
+    width: 14.6875em;
+    max-width: 235px;
+    min-width: 118px;
 }
 
 .bg4-title-2 {
-    
+    width: 16.375;
+    max-width: 262px;
+    min-width: 131px;
 }
 
 .bg4-image-container {
-    
+    width: 75em;
+    max-width: 1008px;
+    margin: 0 auto;
+}
+
+.bg4-image-box {
+    width: 25em;
+    max-width: 286px;
+    padding: 0 1.5em;
+    float: left;
 }
 
 .rect-1 {

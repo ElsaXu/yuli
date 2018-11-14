@@ -157,11 +157,11 @@ function windowResized() {
 	title4.css('left', (windowWidth - title4.width()) / 2);
 	_cHei = container4Inner.height();
 	_maxHei = Math.max(windowHeight, _cHei + 200);
-	container4.css('height', _maxHei);
+	container4.css('height', _maxHei + 100);
 	container4.data('width', container4.width());
 	container4.data('height', _maxHei);
 	container4.data('toTop', container3.data('toTop') + container3.data('height'));
-	container4Inner.data('topToContainer2', (_maxHei - _cHei) / 2);
+	container4Inner.data('toTop', (_maxHei - _cHei) / 2);
 	container4Inner.css('left', (windowWidth - container4Inner.width()) / 2);
 	body.css('height', container4.data('toTop') + container4.data('height'));
 }
