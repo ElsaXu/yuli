@@ -377,6 +377,8 @@
     text-align: center;
     margin: 0 auto;
     padding-top: 80px;
+    position: fixed;
+    transition: top 0.1s linear;
 }
 
 .bg3-title-2 {

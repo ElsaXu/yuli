@@ -19,6 +19,7 @@ var container2Texts = [$('.bg2-text-1'), $('.bg2-text-2'), $('.bg2-text-3')];
 var container3 = $('.container-3');
 var container3Inner = $('.container3-inner');
 var title3 = $('.bg3-title-2');
+var title4 = $('.bg3-title-1');
 var bg3 = $(".bg3-image");
 /* 
  * Visual dom elements definition
@@ -146,6 +147,8 @@ function windowResized() {
 	title3.data('offset', title3.offset());
 	title3.css('left', (windowWidth - title3.width()) / 2);
 	title3.hide();
+	title4.data('topToContainer2', 80);
+	title4.css('left', (windowWidth - title4.width()) / 2);
 }
 function windowScrolled() {
 	scrollTopPrev = scrollTop;
@@ -249,15 +252,18 @@ function checkBg3() {
 		title3.hide();
 	}
 	var _bg3StartAt = Math.min(windowHeight * 0.75, bg3.data('height') * 1);
-	if (_top + container3.data('height') <= windowHeight) {
-
-	} else if (_top <= windowHeight - _bg3StartAt) {
+	if (_top <= windowHeight - _bg3StartAt) {
 		// show bg3
 		bg3.css('transform', 'scale(1, 1)');
 		bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 0.5);
 	} else {
 		bg3.css('transform', 'scale(0.2, 0.2)');
 		bg3.css('top', windowHeight);
+	}
+	if (_top <= windowHeight) {
+		title4.css('top', _top + title4.data('topToContainer2'));
+	} else {
+		title4.css('top', '120%');
 	}
 }
 
