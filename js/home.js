@@ -341,12 +341,6 @@ function displayBg2WidgetAni() {
 	var trangle = $('.square-container-1 > .trangle-container');
 	var smallText = $('.bg2-title-2 .bg2-text-mask');
 
-	square1Top.stop(true,true);
-	square1Bottom.stop(true,true);
-	square1Left.stop(true,true);
-	square1Right.stop(true, true);
-	trangle.stop(true,true);
-	smallText.stop(true,true);
 	// 三角形 放大缩小
 	trangle.addClass("trangle-scale-ani");
 	smallText.addClass("bg2-text-ani");
