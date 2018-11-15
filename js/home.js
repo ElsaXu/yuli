@@ -24,6 +24,21 @@ var title4 = $('.bg3-title-1');
 var bg3 = $('.bg3-image');
 var container4 = $('.container-4');
 var container4Inner = $('.container4-inner');
+// 大正方形 环绕
+var squareTop = $('.bg2-title-1 .line-top');
+var squareBottom = $('.bg2-title-1 .line-bottom-70');
+var squareLeft = $('.bg2-title-1 .line-left');
+var squareRight = $('.bg2-title-1 .line-right');
+// xiao正方形 环绕
+var square1Top = $('.square-container-1 .line-top-reverse');
+var square1Bottom = $('.square-container-1 .line-bottom-100');
+var square1Left = $('.square-container-1 .line-left-reverse');
+var square1Right = $('.square-container-1 .line-right-reverse');
+
+// 三角形 放大缩小
+var trangle = $('.square-container-1 > .trangle-container');
+//  small text
+var smallText = $('.bg2-title-2 .bg2-text-mask');
 /* 
  * Visual dom elements definition
  * End
@@ -227,13 +242,14 @@ function checkBg2() {
 			if (title2.hasClass('bg2-title-1-short-ani')) {
 				title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
 			}
-			displayBg2WidgetAni();
 			title2.css('top', title2.data('topToContainer2'));
 		}
+		displayBg2WidgetAni1();
 	} else {
 		if (!title2.hasClass('bg2-title-1-long-ani')) {
 			title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
 		}
+		removeBg2WidgetAni1();
 		title2.css('top', '120%');
 	}
 	if (_top + container2.data('height') <= windowHeight) {
@@ -309,39 +325,49 @@ setTimeout(function() {
 	bg3title2.addClass("bg3-title-ani");
 },5000);
 
-function displayBg2WidgetAni() {
+var timerId1;
+var timerId2;
+function displayBg2WidgetAni1() {
+	if (timerId2) clearTimeout(timerId2);
+	if (timerId1) return;
 	// 大正方形 环绕
-	var squareTop = $('.bg2-title-1 .line-top');
-	var squareBottom = $('.bg2-title-1 .line-bottom-70');
-	var squareLeft = $('.bg2-title-1 .line-left');
-	var squareRight = $('.bg2-title-1 .line-right');
-
-	// xiao正方形 环绕
-	var square1Top = $('.square-container-1 .line-top-reverse');
-	var square1Bottom = $('.square-container-1 .line-bottom-100');
-	var square1Left = $('.square-container-1 .line-left-reverse');
-	var square1Right = $('.square-container-1 .line-right-reverse');
-
-	// 三角形 放大缩小
-	var trangle = $('.square-container-1 > .trangle-container');
-	//  small text
-	var smallText = $('.bg2-title-2 .bg2-text-mask');
-
-	// 大正方形 环绕
-	squareTop.addClass("line-top-animate");
-	squareBottom.addClass("line-bottom-animate");
-	squareLeft.addClass("line-left-animate");
-	squareRight.addClass("line-right-animate");
-
+	timerId1 = setTimeout(function() {
+		squareTop.addClass("line-top-animate");
+		squareBottom.addClass("line-bottom-animate");
+		squareLeft.addClass("line-left-animate");
+		squareRight.addClass("line-right-animate");
+	}, 2500);
+}
+function displayBg2WidgetAni2() {
 	// 三角形 放大缩小
 	trangle.addClass("trangle-scale-ani");
 	smallText.addClass("bg2-text-ani");
-	
 	// xiao正方形 环绕
 	square1Top.addClass("line-top-animate-1");
 	square1Bottom.addClass("line-bottom-animate-1");
 	square1Left.addClass("line-left-animate-1");
 	square1Right.addClass("line-right-animate-1");
+}
+function removeBg2WidgetAni1() {
+	if (timerId1) clearTimeout(timerId1);
+	if (timerId2) return;
+	// 大正方形 环绕
+	timerId2 = setTimeout(function() {
+		squareTop.removeClass("line-top-animate");
+		squareBottom.removeClass("line-bottom-animate");
+		squareLeft.removeClass("line-left-animate");
+		squareRight.removeClass("line-right-animate");
+	}, 2500);
+}
+function removeBg2WidgetAni2() {
+	// 三角形 放大缩小
+	trangle.removeClass("trangle-scale-ani");
+	smallText.removeClass("bg2-text-ani");
+	// xiao正方形 环绕
+	square1Top.removeClass("line-top-animate-1");
+	square1Bottom.removeClass("line-bottom-animate-1");
+	square1Left.removeClass("line-left-animate-1");
+	square1Right.removeClass("line-right-animate-1");
 }
 
 /* 
