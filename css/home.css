@@ -124,18 +124,16 @@
 }
 
 .bg2-title-text {
-    position: relative;
-    display: inline-block;
-    width: 9.5em;
-    bottom: 0.75em;
-    left: -8px;
-
+    position: absolute;
+    width: 9.25em;
+    min-width: 111px;
+    left: 0;
+    top: 0;
 }
 .bg2-text-mask {
    position: absolute; 
    top: 0;
    right: 0;
-   /*background-color: #fff;*/
    height: 100%;
    width: 9.5em;
 }
@@ -219,9 +217,11 @@
 }
 .width-large {
     width: 0.625em;
+    min-width: 7px;
 }
 .height-large {
     height: 0.625em;
+    min-height: 7px;
 }
 .width-middle {
     width: 0.4375em;
@@ -250,6 +250,8 @@
     position: relative;
     width: 16em;
     min-width: 192px;
+    height: 5.9375em;
+    min-height: 71px;
 }
 .image-mask {
     position: absolute;
@@ -259,11 +261,13 @@
     left: 0;
 }
 .square-container-1 {
-    width: 71px;
+    width: 5.9375em;
     min-width: 71px;
-    height: 71px;
-    position: relative;
-    display: inline-block;
+    height: 5.9375em;
+    min-height: 71px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .square-container-yellow {
     background-color: #f2e9e0;
@@ -310,7 +314,7 @@
 }
 .line-left-animate-1 {
     transition: height 0.2s ease-out 1.3s;
-    height: 71px;
+    height: 100%;
 }
 .line-top-animate-1{
     transition: width 0.2s ease-out 1.2s;
@@ -318,7 +322,7 @@
 }
 .line-right-animate-1 {
     transition: height 0.2s ease-out 1.7s;
-    height: 71px;
+    height: 100%;
 }
 .line-bottom-animate-1 {
     transition: width 0.2s ease-out 1.5s;

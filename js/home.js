@@ -328,7 +328,6 @@ function displayBg2WidgetAni() {
 	var smallText = $('.bg2-title-2 .bg2-text-mask');
 
 	// 大正方形 环绕
-	console.log(square1Top.length);
 	squareTop.addClass("line-top-animate");
 	squareBottom.addClass("line-bottom-animate");
 	squareLeft.addClass("line-left-animate");
