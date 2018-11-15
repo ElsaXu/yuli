@@ -441,21 +441,39 @@
     max-width: 1200px;
     min-width: 320px;
     position: fixed;
-    background-color: #fff;
     overflow: hidden;
     transition: top 0.1s linear;
+}
+
+.bg4-bg {
+    background-color: #fff;
+    height: 80%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.bg4-titles {
+    padding: 5em 7.5em;
+    position: relative;
+    overflow: hidden;
 }
 
 .bg4-title-1 {
     width: 14.6875em;
     max-width: 235px;
     min-width: 118px;
+    float: left;
 }
 
 .bg4-title-2 {
-    width: 16.375;
+    width: 16.375em;
     max-width: 262px;
     min-width: 131px;
+    position: relative;
+    float: right;
+    margin-top: 50px;
 }
 
 .bg4-image-container {
@@ -466,9 +484,10 @@
 
 .bg4-image-box {
     width: 25em;
-    max-width: 286px;
+    max-width: 336px;
     padding: 0 1.5em;
     float: left;
+    position: relative;
 }
 
 .rect-1 {
@@ -566,6 +585,16 @@
     }
     .container2-texts img:last-child {
         margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bg4-image-box {
+        width: 50%;
+        max-width: 336px;
+        margin: 20px auto;
+        float: none;
+        position: relative;
     }
 }
 
