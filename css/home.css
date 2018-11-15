@@ -440,7 +440,7 @@
     width: 90em;
     max-width: 1200px;
     min-width: 320px;
-    height: 35em;
+    height: 53em;
     position: fixed;
     background-color: #fff;
     //overflow: hidden;
@@ -452,11 +452,11 @@
     max-width: 235px;
     min-width: 118px;
     display: inline-block;
-    height: 10em;
     text-align: center;
     overflow: hidden;
     margin-left: 10em;
     margin-top: 5em;
+    margin-bottom: 7.25em;
 }
 
 .bg4-title-2 {

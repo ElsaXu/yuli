@@ -310,6 +310,8 @@ function checkBg4() {
 setTimeout(function() {
 	var bg3title2 = $('.bg3-title-2 .bg3-title-mask');
 	bg3title2.addClass("bg3-title-ani");
+	displayBg4WidgetAni();
+	displayBg2WidgetAni();
 },5000);
 
 function displayBg2BigSquare() {
