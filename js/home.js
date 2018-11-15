@@ -90,7 +90,7 @@ $(document).ready(function() {
 function addEventListeners() {
 	win.on('resize', function() {
 		windowResized();
-		//windowScrolled();
+		windowScrolled();
 	});
 	win.scroll(function(evt) {
 		windowScrolled();
