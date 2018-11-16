@@ -2,7 +2,6 @@
 .container {
     width: 100%;
     position: relative;
-    overflow: hidden;
 }
 
 .container-1 {
@@ -29,7 +28,6 @@
     background-color: #ea0029;
     box-sizing: content-box;
     transition: background-color 1s;
-    overflow-x: hidden;
     position: fixed;
     z-index: 1;
     transition: top 0s linear;
@@ -38,7 +36,6 @@
 .container2-inner {
     width: 50%;
     position: fixed;
-    overflow: hidden;
     transition: top 0s linear;
 }
 
