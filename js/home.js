@@ -34,7 +34,6 @@ var square1Top = $('.square-container-1 .line-top-reverse');
 var square1Bottom = $('.square-container-1 .line-bottom-100');
 var square1Left = $('.square-container-1 .line-left-reverse');
 var square1Right = $('.square-container-1 .line-right-reverse');
-
 // 三角形 放大缩小
 var trangle = $('.square-container-1 > .trangle-container');
 //  small text

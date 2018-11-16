@@ -10,7 +10,7 @@
     background-color: #fefefe;
     overflow: hidden;
     position: fixed;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 
 .bg-1 {
@@ -19,7 +19,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 .bg-1 img {
     
@@ -32,14 +32,14 @@
     overflow-x: hidden;
     position: fixed;
     z-index: 1;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 
 .container2-inner {
     width: 50%;
     position: fixed;
     overflow: hidden;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 
 .container2-titles {
@@ -55,7 +55,7 @@
     left: 100%;
     top: 0;
     height: 10000px;
-    transition: left 0.1s linear;
+    transition: left 0s linear;
 }
 
 .container2-mask-2 {
@@ -65,7 +65,7 @@
     bottom: -200px;
     left: 0;
     height: 200px;
-    transition: bottom 0.1s linear;
+    transition: bottom 0s linear;
 }
 
 .bg2-title-1 {
@@ -79,7 +79,7 @@
     transition: top 1s ;
 }
 .bg2-title-1-short-ani {
-    transition: top 0.1s linear ;
+    transition: top 0s linear ;
 }
 
 .bg2-title-1-placeholder {
@@ -363,7 +363,7 @@
     position: fixed;
     top: -5px;
     z-index: 2;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 .container-3 img {
     width: 100%;
@@ -376,7 +376,7 @@
     margin: 0 auto;
     padding-top: 80px;
     position: fixed;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 
 .bg3-title-2 {
@@ -386,7 +386,7 @@
     position: fixed;
     z-index: 1;
     top: 30%;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 .bg3-title-mask {
     position: absolute;
@@ -410,7 +410,7 @@
     top: 95%;
     position: fixed;
     transform: scale(0.2, 0.2);
-    transition: transform 1s linear, top 0.1s linear;
+    transition: transform 1s linear, top 0s linear;
 }
 
 .bg2-text-ani {
@@ -424,7 +424,7 @@
     position: fixed;
     top: -5px;
     z-index: 10;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 .container-4 img {
     width: 100%;
@@ -437,7 +437,7 @@
    /* height: 53em;*/
     position: fixed;
     overflow: hidden;
-    transition: top 0.1s linear;
+    transition: top 0s linear;
 }
 
 .bg4-bg {
