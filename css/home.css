@@ -217,11 +217,11 @@
 }
 .width-large {
     width: 0.625em;
-    min-width: 7px;
+    min-width: 6px;
 }
 .height-large {
     height: 0.625em;
-    min-height: 7px;
+    min-height: 6px;
 }
 .width-middle {
     width: 0.4375em;
@@ -261,10 +261,12 @@
     left: 0;
 }
 .square-container-1 {
-    width: 5.9375em;
-    min-width: 71px;
-    height: 5.9375em;
-    min-height: 71px;
+    width: 6em;
+    max-width: 96px;
+    min-width: 48px;
+    height: 6em;
+    max-width: 96px;
+    min-height: 48px;
     position: absolute;
     top: 0;
     right: 0;
@@ -276,8 +278,10 @@
     position: absolute;
     right: 14px;
     top: 14px;
-    width: 16px;
-    height: 16px;
+    width: 1em;
+    height: 1em;
+    min-width: 10px;
+    min-height: 10px;
     opacity: 0;
 }
 .trangle-container img {
@@ -452,11 +456,14 @@
 
 .bg4-title-2 {
     width: 16.375em;
+    height: 6em;
     max-width: 262px;
     min-width: 131px;
+    max-height: 96px;
+    min-height: 48px;
     position: relative;
     float: right;
-    margin-top: 50px;
+    margin-top: 7em;
 }
 
 .bg4-image-container {
