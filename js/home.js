@@ -324,11 +324,11 @@ function checkBg4() {
 }
 
 setTimeout(function() {
-	var bg3title2 = $('.bg3-title-2 .bg3-title-mask');
-	bg3title2.addClass("bg3-title-ani");
-	displayBg4WidgetAni();
+	displayBg4ImageAni();
 	displayBg2WidgetAni();
-},5000);
+	bg3TitleAni();
+},10000);
+
 
 var timerId1;
 var timerId2;
@@ -353,16 +353,12 @@ function displayBg2WidgetAni2() {
 	square1Left.addClass("line-left-animate-1");
 	square1Right.addClass("line-right-animate-1");
 }
+
 function displayBg2BigSquare() {
 	var squareTop = $('.bg2-title-1 .line-top');
 	var squareBottom = $('.bg2-title-1 .line-bottom-70');
 	var squareLeft = $('.bg2-title-1 .line-left');
 	var squareRight = $('.bg2-title-1 .line-right');
-
-	squareTop.stop(true, true);
-	squareBottom.stop(true, true);
-	squareLeft.stop(true, true);
-	squareRight.stop(true, true);
 
 	squareTop.addClass("line-top-animate");
 	squareBottom.addClass("line-bottom-animate");
@@ -388,6 +384,7 @@ function displayBg2WidgetAni() {
 	square1Left.addClass("line-left-animate-1");
 	square1Right.addClass("line-right-animate-1");
 }
+
 function removeBg2WidgetAni1() {
 	if (timerId1) clearTimeout(timerId1);
 	if (timerId2) return;
@@ -409,15 +406,16 @@ function removeBg2WidgetAni2() {
 	square1Left.removeClass("line-left-animate-1");
 	square1Right.removeClass("line-right-animate-1");
 }
-
-function displayBg4WidgetAni() {
+// scenario 3 title
+function bg3TitleAni() {
+	var bg3title2 = $('.bg3-title-2 .bg3-title-mask');
+	bg3title2.addClass("bg3-title-ani");
+}
+// scenario 4 title
+function displayBg4ImageAni() {
 	var bg4Image1 = $(".bg4-image-container .bg4-image-1");
 	var bg4Image2 = $(".bg4-image-container .bg4-image-2");
 	var bg4Image3 = $(".bg4-image-container .bg4-image-3");
-
-	bg4Image1.stop(true,true);
-	bg4Image2.stop(true,true);
-	bg4Image3.stop(true,true);
 
 	bg4Image1.addClass("bg4-image-ani-1");
 	bg4Image2.addClass("bg4-image-ani-2");
