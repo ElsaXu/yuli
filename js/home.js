@@ -130,11 +130,11 @@ function windowResized() {
 	if (windowWidth / (windowHeight * config.bg_1_heightRate) >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
 		bg1.find('img').css('width', '100%').css('height', '');
-		bg1.css('top', -scrollTop);
+		//bg1.css('top', -scrollTop);
 	} else {
 		container1.css('height', windowHeight * config.bg_1_heightRate);
 		bg1.find('img').css('height', windowHeight * config.bg_1_heightRate).css('width', '');
-		bg1.css('top', 0);
+		//bg1.css('top', 0);
 	}
 	container1.data('height', container1.height());
 	container1.data('toTop', 0);
@@ -152,6 +152,7 @@ function windowResized() {
 	title2Clone.css('width', title2.width());
 	title2Clone.css('height', title2.height());
 	title2.data('topToContainer2', container2Inner.data('topToContainer2') + 30);
+	title2.data('needSwitchAniMode', true);
 	for (var i = 0; i < container2Texts.length; i++) {
 		container2Texts[i].data('topToContainer2', container2Texts[i].offset().top - container2Inner.offset().top + container2Inner.data('topToContainer2'));
 	}
@@ -192,9 +193,11 @@ function checkBg1() {
 	var _scrollY = scrollTop;
 	var _hideAt = config.bg_1_hideAt * widthRate;
 	if (_scrollY >= container1.data('height') - windowHeight * config.bg_1_followRate) {
-		bg1.css('top', -container1.data('height') + windowHeight * config.bg_1_followRate);
+		//bg1.css('top', -container1.data('height') + windowHeight * config.bg_1_followRate);
+		container1.css('top', -container1.data('height') + windowHeight * config.bg_1_followRate);
 	} else {
-		bg1.css('top', -_scrollY);
+		//bg1.css('top', -_scrollY);
+		container1.css('top', -_scrollY);
 	}
 }
 function checkRect1() {
@@ -219,7 +222,6 @@ function checkRect1() {
 		}
 		title1.css('left', _dx);
 	}
-	container1.css('top', _scrollY);
 }
 function checkBg2() {
 	var _top = container2.data('toTop') - scrollTop;
@@ -238,8 +240,11 @@ function checkBg2() {
 			}
 			title2.css('top', _top + title2.data('topToContainer2'));
 		} else {
-			if (title2.hasClass('bg2-title-1-short-ani')) {
-				title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
+			// if (title2.hasClass('bg2-title-1-short-ani')) {
+			// 	title2.removeClass('bg2-title-1-short-ani').addClass('bg2-title-1-long-ani');
+			// }
+			if (title2.css('top') === title2.data('topToContainer2')) {
+				title2.removeClass('bg2-title-1-long-ani').addClass('bg2-title-1-short-ani');
 			}
 			//displayBg2BigSquare();
 			//displayBg2WidgetAni();
@@ -252,6 +257,7 @@ function checkBg2() {
 		}
 		removeBg2WidgetAni1();
 		title2.css('top', '120%');
+		title2.data('needSwitchAniMode', true);
 	}
 	if (_top + container2.data('height') <= windowHeight) {
 		container2Inner.css('top', windowHeight - container2.data('height') + container2Inner.data('topToContainer2'));
