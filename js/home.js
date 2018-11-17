@@ -125,7 +125,7 @@ function windowResized() {
 	windowHeight = win.height();
 	scrollTop = win.scrollTop();
 	widthRate = windowWidth / defaultWidth;
-	//html.css('font-size', (config.body_fontSize * widthRate) + 'px');
+	html.css('font-size', (config.body_fontSize * widthRate) + 'px');
 
 	if (windowWidth / (windowHeight * config.bg_1_heightRate) >= config.bg_1_width / config.bg_1_height) {
 		container1.css('height', config.bg_1_height * widthRate);
