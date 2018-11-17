@@ -22,6 +22,8 @@ var container3 = $('.container-3');
 var container3Inner = $('.container3-inner');
 var title3 = $('.bg3-title-2');
 var title4 = $('.bg3-title-1');
+var bg3TitleMask = $('.bg3-title-mask');
+var bg3TitleImage = $('.bg3-title-mask>img');
 var bg3 = $('.bg3-image');
 var container4 = $('.container-4');
 var container4Inner = $('.container4-inner');
@@ -173,12 +175,13 @@ function windowResized() {
 	container3.data('height', _maxHei);
 	container3.data('offset', container3.offset());
 	container3.data('toTop', container2.data('toTop') + container2.data('height'));
-	title3.show(); //reset title3, title3Clone
+	//title3.show(); //reset title3, title3Clone
 	title3.data('offset', title3.offset());
 	title3.css('left', (windowWidth - title3.width()) / 2);
-	title3.hide();
+	//title3.hide();
 	title4.data('topToContainer2', 80);
 	title4.css('left', (windowWidth - title4.width()) / 2);
+	bg3TitleImage.width(title3.width());
 	_cHei = container4Inner.height();
 	_maxHei = Math.max(windowHeight, _cHei + 200);
 	container4.css('height', _maxHei + 100);
@@ -304,12 +307,16 @@ function checkBg3() {
 	if (_top <= -windowHeight / 3) {
 		title3.css('top', windowHeight * 0.3 + (_top + windowHeight) * 0.2);
 	} else {
-		title3.css('top', '30%');
+		title3.css('top', windowHeight * 0.3 + (_top + windowHeight) * 0.2);
 	}
-	if (_top <= -windowHeight / 3){
-		title3.show();
+	if (_top <= -windowHeight / 3) {
+		//title3.show();
+		bg3TitleMask.css('width', '100%');
+		bg3TitleMask.css('opacity', 1);
 	} else {
-		title3.hide();
+		//title3.hide();
+		bg3TitleMask.css('width', 0);
+		bg3TitleMask.css('opacity', 0);
 	}
 	var _bg3StartAt = Math.min(windowHeight * 0.75, bg3.data('height') * 1);
 	if (_top <= windowHeight - _bg3StartAt) {
