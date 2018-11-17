@@ -109,7 +109,7 @@
     position: relative;
     margin-bottom: 24px;
     overflow: hidden;
-    transition: top 0.5s, opacity 1s;
+    transition: top 1s, opacity 1s;
 }
 .bg2-text>div {
     float: left;
@@ -260,12 +260,12 @@
     top: 0;
     left: 0;
 }
-.square-container-1 {
+.square-container-1, .square-container-2 {
     width: 6em;
     max-width: 96px;
     min-width: 48px;
     height: 6em;
-    max-width: 96px;
+    max-height: 96px;
     min-height: 48px;
     position: absolute;
     top: 0;
@@ -448,7 +448,6 @@
     min-width: 118px;
     text-align: center;
     overflow: hidden;
-    margin-left: 10em;
     margin-top: 5em;
     margin-bottom: 7.25em;
     float: left;
@@ -466,12 +465,26 @@
     margin-top: 7em;
 }
 
+.bg4-title-text {
+    position: absolute;
+    width: 9.25em;
+    min-width: 74px;
+    max-width: 148px;
+    left: 0;
+    bottom: 0;
+}
+
+.bg4-text-mask-white {
+    background-color: #fff;
+}
+
 .bg4-image-container {
     width: 75em;
     max-width: 1008px;
     margin: 0 auto;
 }
 
+/*
 .bg4-image-1 {
     transform: translateY(50%);
 }
@@ -483,6 +496,7 @@
 .bg4-image-3 {
     transform: translateY(120%);
 }
+*/
 
 .bg4-image-ani-1 {
     transform: translateY(0);
@@ -505,6 +519,7 @@
     padding: 0 1.5em;
     float: left;
     position: relative;
+    transition: top 1s, opacity 1s;
 }
 
 .rect-1 {

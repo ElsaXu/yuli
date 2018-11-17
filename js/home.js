@@ -25,6 +25,8 @@ var title4 = $('.bg3-title-1');
 var bg3 = $('.bg3-image');
 var container4 = $('.container-4');
 var container4Inner = $('.container4-inner');
+var title41 = $('.bg4-title-2');
+var container4Images = [$('.bg4-image-1'), $('.bg4-image-2'), $('.bg4-image-3')];
 // 大正方形 环绕
 var squareTop = $('.bg2-title-1 .line-top');
 var squareBottom = $('.bg2-title-1 .line-bottom-70');
@@ -35,10 +37,16 @@ var square1Top = $('.square-container-1 .line-top-reverse');
 var square1Bottom = $('.square-container-1 .line-bottom-100');
 var square1Left = $('.square-container-1 .line-left-reverse');
 var square1Right = $('.square-container-1 .line-right-reverse');
+var square2Top = $('.square-container-2 .line-top-reverse');
+var square2Bottom = $('.square-container-2 .line-bottom-100');
+var square2Left = $('.square-container-2 .line-left-reverse');
+var square2Right = $('.square-container-2 .line-right-reverse');
 // 三角形 放大缩小
 var trangle = $('.square-container-1 > .trangle-container');
+var trangle2 = $('.square-container-2 > .trangle-container');
 //  small text
 var smallText = $('.bg2-title-2 .bg2-text-mask');
+var smallText2 = $('.bg4-title-2 .bg2-text-mask');
 /* 
  * Visual dom elements definition
  * End
@@ -176,9 +184,14 @@ function windowResized() {
 	container4.css('height', _maxHei + 100);
 	container4.data('width', container4.width());
 	container4.data('height', _maxHei);
+	container4.data('offset', container4.offset());
 	container4.data('toTop', container3.data('toTop') + container3.data('height'));
 	container4Inner.data('toTop', (_maxHei - _cHei) / 2);
 	container4Inner.css('left', (windowWidth - container4Inner.width()) / 2);
+	title41.data('topToContainer4', title41.offset().top - container4.data('offset').top);
+	for (var i = 0; i < container4Images.length; i++) {
+		container4Images[i].data('topToContainer4', container4Images[i].offset().top - container4Inner.offset().top + container4Inner.data('toTop'));
+	}
 	body.css('height', container4.data('toTop') + container4.data('height'));
 }
 function windowScrolled() {
@@ -317,28 +330,25 @@ function checkBg4() {
 	var _top = container4.data('toTop') - scrollTop;
 	container4.css('top', _top);
 	container4Inner.css('top', _top + container4Inner.data('toTop'));
-	// displayBg4WidgetAni();
-	// displayBg2WidgetAni();
-	// if (_top <= windowHeight - _bg3StartAt) {
-	// 	// show bg3
-	// 	bg3.css('transform', 'scale(1, 1)');
-	// 	bg3.css('top', windowHeight - (windowHeight - _bg3StartAt - _top) * 0.5);
-	// } else {
-	// 	bg3.css('transform', 'scale(0.2, 0.2)');
-	// 	bg3.css('top', windowHeight);
-	// }
-	// if (_top <= windowHeight) {
-	// 	title4.css('top', _top + title4.data('topToContainer2'));
-	// } else {
-	// 	title4.css('top', '120%');
-	// }
+	if (_top + title41.data('topToContainer4') < windowHeight) {
+		displayBg4WidgetAni1();
+	} else {
+		removeBg4WidgetAni1();
+	}
+	for (var i = 0; i < container4Images.length; i++) {
+		if (container4Images[i].data('topToContainer4') + _top <= windowHeight - 150) {
+			container4Images[i].css('top', 0).css('opacity', 1);
+		} else {
+			container4Images[i].css('top', 100).css('opacity', 0);
+		}
+	}
 }
 
-setTimeout(function() {
-	displayBg4ImageAni();
-	displayBg2WidgetAni();
-	bg3TitleAni();
-},10000);
+// setTimeout(function() {
+// 	displayBg4ImageAni();
+// 	displayBg2WidgetAni();
+// 	bg3TitleAni();
+// },10000);
 
 function displayBg2WidgetAni1() {
 	// 大正方形 环绕
@@ -357,37 +367,48 @@ function displayBg2WidgetAni2() {
 	square1Left.addClass("line-left-animate-1");
 	square1Right.addClass("line-right-animate-1");
 }
-
-function displayBg2BigSquare() {
-	var squareTop = $('.bg2-title-1 .line-top');
-	var squareBottom = $('.bg2-title-1 .line-bottom-70');
-	var squareLeft = $('.bg2-title-1 .line-left');
-	var squareRight = $('.bg2-title-1 .line-right');
-
-	squareTop.addClass("line-top-animate");
-	squareBottom.addClass("line-bottom-animate");
-	squareLeft.addClass("line-left-animate");
-	squareRight.addClass("line-right-animate");
+function displayBg4WidgetAni1() {
+	// 三角形 放大缩小
+	trangle2.addClass("trangle-scale-ani");
+	smallText2.addClass("bg2-text-ani");
+	// xiao正方形 环绕
+	square2Top.addClass("line-top-animate-1");
+	square2Bottom.addClass("line-bottom-animate-1");
+	square2Left.addClass("line-left-animate-1");
+	square2Right.addClass("line-right-animate-1");
 }
 
-function displayBg2WidgetAni() {
-	// xiao正方形 环绕
-	var square1Top = $('.square-container-1 .line-top-reverse');
-	var square1Bottom = $('.square-container-1 .line-bottom-100');
-	var square1Left = $('.square-container-1 .line-left-reverse');
-	var square1Right = $('.square-container-1 .line-right-reverse');
-	// 三角形 放大缩小
-	var trangle = $('.square-container-1 > .trangle-container');
-	var smallText = $('.bg2-title-2 .bg2-text-mask');
-	// 三角形 放大缩小
-	trangle.addClass("trangle-scale-ani");
-	smallText.addClass("bg2-text-ani");
-	// xiao正方形 环绕
-	square1Top.addClass("line-top-animate-1");
-	square1Bottom.addClass("line-bottom-animate-1");
-	square1Left.addClass("line-left-animate-1");
-	square1Right.addClass("line-right-animate-1");
-}
+
+// function displayBg2BigSquare() {
+// 	var squareTop = $('.bg2-title-1 .line-top');
+// 	var squareBottom = $('.bg2-title-1 .line-bottom-70');
+// 	var squareLeft = $('.bg2-title-1 .line-left');
+// 	var squareRight = $('.bg2-title-1 .line-right');
+
+// 	squareTop.addClass("line-top-animate");
+// 	squareBottom.addClass("line-bottom-animate");
+// 	squareLeft.addClass("line-left-animate");
+// 	squareRight.addClass("line-right-animate");
+// }
+
+// function displayBg2WidgetAni() {
+// 	// xiao正方形 环绕
+// 	var square1Top = $('.square-container-1 .line-top-reverse');
+// 	var square1Bottom = $('.square-container-1 .line-bottom-100');
+// 	var square1Left = $('.square-container-1 .line-left-reverse');
+// 	var square1Right = $('.square-container-1 .line-right-reverse');
+// 	// 三角形 放大缩小
+// 	var trangle = $('.square-container-1 > .trangle-container');
+// 	var smallText = $('.bg2-title-2 .bg2-text-mask');
+// 	// 三角形 放大缩小
+// 	trangle.addClass("trangle-scale-ani");
+// 	smallText.addClass("bg2-text-ani");
+// 	// xiao正方形 环绕
+// 	square1Top.addClass("line-top-animate-1");
+// 	square1Bottom.addClass("line-bottom-animate-1");
+// 	square1Left.addClass("line-left-animate-1");
+// 	square1Right.addClass("line-right-animate-1");
+// }
 
 function removeBg2WidgetAni1() {
 	// 大正方形 环绕
@@ -405,6 +426,16 @@ function removeBg2WidgetAni2() {
 	square1Bottom.removeClass("line-bottom-animate-1");
 	square1Left.removeClass("line-left-animate-1");
 	square1Right.removeClass("line-right-animate-1");
+}
+function removeBg4WidgetAni1() {
+	// 三角形 放大缩小
+	trangle2.removeClass("trangle-scale-ani");
+	smallText2.removeClass("bg2-text-ani");
+	// xiao正方形 环绕
+	square2Top.removeClass("line-top-animate-1");
+	square2Bottom.removeClass("line-bottom-animate-1");
+	square2Left.removeClass("line-left-animate-1");
+	square2Right.removeClass("line-right-animate-1");
 }
 // scenario 3 title
 function bg3TitleAni() {
