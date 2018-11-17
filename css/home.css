@@ -132,10 +132,10 @@
    top: 0;
    right: 0;
    height: 100%;
-   width: 9.5em;
+   width: 100%;
 }
 .bg2-text-mask-red {
-    background: red;
+    background: #b40020;
 }
 .square-container {
     position: absolute;
@@ -278,6 +278,7 @@
     top: 14px;
     width: 16px;
     height: 16px;
+    opacity: 0;
 }
 .trangle-container img {
     height: 100%;
@@ -578,9 +579,9 @@
 }
 
 @keyframes trangle-scale {
-    0 {transform: scale(0.2); -webkit-transform: scale(0.2); -ms-transform: scale(0.2); -mos-transform: scale(0.2));}
-    50% {transform: scale(1.5); -webkit-transform: scale(1.5); -ms-transform: scale(1.5); -mos-transform: scale(1.5);}
-    100% {transform: scale(1); -webkit-transform: scale(1); -ms-transform: scale(1); -mos-transform: scale(1);}
+    0 {transform: scale(0.2); -webkit-transform: scale(0.2); -ms-transform: scale(0.2); -mos-transform: scale(0.2); opacity: 0;}
+    50% {transform: scale(1.5); -webkit-transform: scale(1.5); -ms-transform: scale(1.5); -mos-transform: scale(1.5); opacity: 1;}
+    100% {transform: scale(1); -webkit-transform: scale(1); -ms-transform: scale(1); -mos-transform: scale(1); opacity: 1;}
     }
 }
 

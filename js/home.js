@@ -10,6 +10,7 @@ var rect1 = $('.rect-1');
 var bg1 = $('.bg-1');
 var title1 = $('.title-1');
 var title2 = $('.bg2-title-1');
+var title21 = $('.bg2-title-2');
 var title2Clone = $('.bg2-title-1-placeholder');
 var container2 = $('.container-2');
 var container2Inner = $('.container2-inner');
@@ -152,7 +153,7 @@ function windowResized() {
 	title2Clone.css('width', title2.width());
 	title2Clone.css('height', title2.height());
 	title2.data('topToContainer2', container2Inner.data('topToContainer2') + 30);
-	title2.data('needSwitchAniMode', true);
+	title21.data('topToContainer2', title21.offset().top - container2.data('offset').top);
 	for (var i = 0; i < container2Texts.length; i++) {
 		container2Texts[i].data('topToContainer2', container2Texts[i].offset().top - container2Inner.offset().top + container2Inner.data('topToContainer2'));
 	}
@@ -232,6 +233,11 @@ function checkBg2() {
 	} else {
 		container2.css('background-color', config.bg_2_defaultColor);
 	}
+	if (_top + title21.data('topToContainer2') < windowHeight) {
+		displayBg2WidgetAni2();
+	} else {
+		removeBg2WidgetAni2();
+	}
 	var _dy = title2.data('topToContainer2');
 	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
 		if (_top <= 0) {
@@ -257,7 +263,6 @@ function checkBg2() {
 		}
 		removeBg2WidgetAni1();
 		title2.css('top', '120%');
-		title2.data('needSwitchAniMode', true);
 	}
 	if (_top + container2.data('height') <= windowHeight) {
 		container2Inner.css('top', windowHeight - container2.data('height') + container2Inner.data('topToContainer2'));
@@ -335,19 +340,12 @@ setTimeout(function() {
 	bg3TitleAni();
 },10000);
 
-
-var timerId1;
-var timerId2;
 function displayBg2WidgetAni1() {
-	if (timerId2) clearTimeout(timerId2);
-	if (timerId1) return;
 	// 大正方形 环绕
-	timerId1 = setTimeout(function() {
-		squareTop.addClass("line-top-animate");
-		squareBottom.addClass("line-bottom-animate");
-		squareLeft.addClass("line-left-animate");
-		squareRight.addClass("line-right-animate");
-	}, 2500);
+	squareTop.addClass("line-top-animate");
+	squareBottom.addClass("line-bottom-animate");
+	squareLeft.addClass("line-left-animate");
+	squareRight.addClass("line-right-animate");
 }
 function displayBg2WidgetAni2() {
 	// 三角形 放大缩小
@@ -392,15 +390,11 @@ function displayBg2WidgetAni() {
 }
 
 function removeBg2WidgetAni1() {
-	if (timerId1) clearTimeout(timerId1);
-	if (timerId2) return;
 	// 大正方形 环绕
-	timerId2 = setTimeout(function() {
-		squareTop.removeClass("line-top-animate");
-		squareBottom.removeClass("line-bottom-animate");
-		squareLeft.removeClass("line-left-animate");
-		squareRight.removeClass("line-right-animate");
-	}, 2500);
+	squareTop.removeClass("line-top-animate");
+	squareBottom.removeClass("line-bottom-animate");
+	squareLeft.removeClass("line-left-animate");
+	squareRight.removeClass("line-right-animate");
 }
 function removeBg2WidgetAni2() {
 	// 三角形 放大缩小
