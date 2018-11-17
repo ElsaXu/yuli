@@ -524,6 +524,23 @@
     transition: top 1s, opacity 1s;
 }
 
+.blank {
+
+}
+.footer {
+    padding: 50px;
+    min-height: 20em;
+    background-color: #3a3a3a;
+    width: 100%;
+    position: relative;
+    z-index: 12;
+    /*
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    */
+}
+
 .rect-1 {
     width: 65%;
     height: 37.1875em;

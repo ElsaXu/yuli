@@ -5,6 +5,7 @@
 var win = $(window);
 var html = $('html');
 var body = $('body');
+var blank = $('.blank');
 var container1 = $('.container-1');
 var rect1 = $('.rect-1');
 var bg1 = $('.bg-1');
@@ -29,6 +30,7 @@ var container4 = $('.container-4');
 var container4Inner = $('.container4-inner');
 var title41 = $('.bg4-title-2');
 var container4Images = [$('.bg4-image-1'), $('.bg4-image-2'), $('.bg4-image-3')];
+var footer = $('.footer');
 // 大正方形 环绕
 var squareTop = $('.bg2-title-1 .line-top');
 var squareBottom = $('.bg2-title-1 .line-bottom-70');
@@ -175,10 +177,8 @@ function windowResized() {
 	container3.data('height', _maxHei);
 	container3.data('offset', container3.offset());
 	container3.data('toTop', container2.data('toTop') + container2.data('height'));
-	//title3.show(); //reset title3, title3Clone
 	title3.data('offset', title3.offset());
 	title3.css('left', (windowWidth - title3.width()) / 2);
-	//title3.hide();
 	title4.data('topToContainer2', 80);
 	title4.css('left', (windowWidth - title4.width()) / 2);
 	bg3TitleImage.width(title3.width());
@@ -195,7 +195,8 @@ function windowResized() {
 	for (var i = 0; i < container4Images.length; i++) {
 		container4Images[i].data('topToContainer4', container4Images[i].offset().top - container4Inner.offset().top + container4Inner.data('toTop'));
 	}
-	body.css('height', container4.data('toTop') + container4.data('height'));
+	blank.css('height', container4.data('toTop') + container4.data('height'));
+	console.log(footer.height());
 }
 function windowScrolled() {
 	scrollTopPrev = scrollTop;
