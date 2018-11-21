@@ -747,5 +747,8 @@
         /* max-width: 1008px; */
         margin: 0 auto;
     }
+    .rect-1 {
+        height: 55em;
+    }
 }
 
