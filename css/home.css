@@ -723,13 +723,29 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
     .bg4-image-box {
         width: 75%;
         max-width: 336px;
         margin: 20px auto;
         float: none;
         position: relative;
+    }
+}*/
+@media screen and (max-width: 640px) {
+    .bg4-image-box {
+        width: 86%;
+        max-width: 86%;
+        margin: 20px auto;
+        padding: 0;
+        float: none;
+        position: relative;
+    }
+
+    .bg4-image-container {
+        width: 100%;
+        /* max-width: 1008px; */
+        margin: 0 auto;
     }
 }
 
