@@ -11,7 +11,8 @@ var rect1 = $('.rect-1');
 var bg1 = $('.bg-1');
 var title1 = $('.title-1');
 var title2 = $('.bg2-title-1');
-var title21 = $('.bg2-title-2');
+var title21 = $('.bg2-title-2').eq(0);
+var title21Fixed = $('.bg2-title-2-fixed');
 var title2Clone = $('.bg2-title-1-placeholder');
 var container2 = $('.container-2');
 var container2Inner = $('.container2-inner');
@@ -254,6 +255,13 @@ function checkBg2() {
 		displayBg2WidgetAni2();
 	} else {
 		removeBg2WidgetAni2();
+	}
+	if (_top + title21.data('topToContainer2') < 0 && windowWidth <= 640) {
+		title21.css('opacity', 0);
+		title21Fixed.css('opacity', 1);
+	} else {
+		title21.css('opacity', 1);
+		title21Fixed.css('opacity', 0);
 	}
 	var _dy = title2.data('topToContainer2');
 	if (_top <= windowHeight + windowHeight * config.title_2_showAtRate ) {
