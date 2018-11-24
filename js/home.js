@@ -167,6 +167,7 @@ function windowResized() {
 	title2Clone.css('height', title2.height());
 	title2.data('topToContainer2', container2Inner.data('topToContainer2') + 30);
 	title21.data('topToContainer2', title21.offset().top - container2.data('offset').top);
+	title2.css('left', title2Clone.offset().left);
 	for (var i = 0; i < container2Texts.length; i++) {
 		container2Texts[i].data('topToContainer2', container2Texts[i].offset().top - container2Inner.offset().top + container2Inner.data('topToContainer2'));
 	}

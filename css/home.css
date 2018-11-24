@@ -75,6 +75,9 @@
     width: 26.1875em;
     min-width: 314px;
 }
+.bg2-title-1 img {
+    width: 100%;
+}
 .bg2-title-1-long-ani {
     transition: top 1s ;
 }
@@ -114,7 +117,7 @@
 .container2-texts img:last-child {
     margin-left: 0.75em;
 }
-.container-2 img {
+.container2-inner img {
     vertical-align: top;
     width: 100%;
 }
