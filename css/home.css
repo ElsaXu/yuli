@@ -37,6 +37,7 @@
     width: 50%;
     position: fixed;
     transition: top 0s linear;
+    z-index: 2;
 }
 
 .container2-titles {
@@ -46,23 +47,25 @@
 }
 
 .container2-mask-1 {
-    position: absolute;
+    position: fixed;
     background-color: #ea0029;
     width: 100%;
     left: 100%;
     top: 0;
     height: 10000px;
     transition: left 0s linear;
+    z-index: 3;
 }
 
 .container2-mask-2 {
-    position: absolute;
+    position: fixed;
     background-color: #ea0029;
     width: 100%;
     bottom: -200px;
     left: 0;
     height: 200px;
     transition: bottom 0s linear;
+    z-index: 3;
 }
 
 .bg2-title-1 {
@@ -367,7 +370,7 @@
     background-color: #ea0029;
     position: fixed;
     top: -5px;
-    z-index: 2;
+    z-index: 3;
     transition: top 0s linear;
 }
 .container-3 img {
