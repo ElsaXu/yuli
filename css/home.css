@@ -752,6 +752,9 @@
     }
 }*/
 @media screen and (max-width: 640px) {
+    .bg2-title-2 {
+        left: 60px;
+    }
     .bg4-image-box {
         width: 86%;
         max-width: 86%;
