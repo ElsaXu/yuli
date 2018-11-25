@@ -29,7 +29,9 @@ var bg3TitleImage = $('.bg3-title-mask>img');
 var bg3 = $('.bg3-image');
 var container4 = $('.container-4');
 var container4Inner = $('.container4-inner');
-var title41 = $('.bg4-title-2');
+var title41 = $('.bg4-title-2').eq(0);
+var title41Fixed = $('.bg4-title-2-fixed');
+var title41Square = title41.find('.square-container-2');
 var container4Images = [$('.bg4-image-1'), $('.bg4-image-2'), $('.bg4-image-3')];
 var footer = $('.footer');
 // 大正方形 环绕
@@ -193,7 +195,8 @@ function windowResized() {
 	container4.data('toTop', container3.data('toTop') + container3.data('height'));
 	container4Inner.data('toTop', (_maxHei - _cHei) / 2);
 	container4Inner.css('left', (windowWidth - container4Inner.width()) / 2);
-	title41.data('topToContainer4', title41.offset().top - container4.data('offset').top);
+	title41Fixed.css('left', (windowWidth - container4Inner.width()) / 2);
+	title41.data('topToContainer4', title41Square.offset().top - container4.data('offset').top);
 	for (var i = 0; i < container4Images.length; i++) {
 		container4Images[i].data('topToContainer4', container4Images[i].offset().top - container4Inner.offset().top + container4Inner.data('toTop'));
 	}
@@ -351,6 +354,13 @@ function checkBg4() {
 		displayBg4WidgetAni1();
 	} else {
 		removeBg4WidgetAni1();
+	}
+	if (_top + title41.data('topToContainer4') <= 0) {
+		title41.css('opacity', 0);
+		title41Fixed.css('opacity', 1);
+	} else {
+		title41.css('opacity', 1);
+		title41Fixed.css('opacity', 0);
 	}
 	for (var i = 0; i < container4Images.length; i++) {
 		if (container4Images[i].data('topToContainer4') + _top <= windowHeight - 150) {

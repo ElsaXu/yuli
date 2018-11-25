@@ -130,15 +130,21 @@
     position: relative;
     margin-bottom: 24px;
     overflow: hidden;
-    transition: top 1s, opacity 1s;
 }
 .bg2-text>div {
     float: left;
     margin-right: 24px;
 }
 
+.bg2-text-1 {
+    transition: top 1s, opacity 1s;
+}
 .bg2-text-2 {
     left: 5em;
+    transition: top 1s ease 0.3s, opacity 1s ease 0.3s;
+}
+.bg2-text-3 {
+    transition: top 1s ease 0.6s, opacity 1s ease 0.6s;
 }
 
 .bg2-title-text {
@@ -447,6 +453,24 @@
     position: fixed;
     overflow: hidden;
     transition: top 0s linear;
+}
+
+.bg4-title-2-fixed {
+    width: 90%;
+    max-width: 1200px;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: none;
+    padding: 0 7.5em;
+    background-color: #fff;
+}
+.bg4-title-2-fixed>.bg4-title-2 {
+    margin-top: 0;
+}
+.bg4-title-2-fixed img {
+    width: 100%;
 }
 
 .bg4-bg {
