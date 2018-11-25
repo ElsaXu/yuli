@@ -355,7 +355,7 @@ function checkBg4() {
 	} else {
 		removeBg4WidgetAni1();
 	}
-	if (_top + title41.data('topToContainer4') <= 0) {
+	if (_top + title41.data('topToContainer4') <= 0 && windowWidth <= 640) {
 		title41.css('opacity', 0);
 		title41Fixed.css('opacity', 1);
 	} else {
