@@ -141,10 +141,10 @@
 }
 .bg2-text-2 {
     left: 5em;
-    transition: top 1s ease 0.3s, opacity 1s ease 0.3s;
+    transition: top 1s ease 0.25s, opacity 1s ease 0.25s;
 }
 .bg2-text-3 {
-    transition: top 1s ease 0.6s, opacity 1s ease 0.6s;
+    transition: top 1s ease 0.4s, opacity 1s ease 0.4s;
 }
 
 .bg2-title-text {

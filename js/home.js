@@ -322,16 +322,15 @@ function checkBg3() {
 	} else {
 		title3.css('top', windowHeight * 0.3 + (_top + windowHeight) * 0.2);
 	}
-	if (_top <= -windowHeight / 3) {
-		//title3.show();
+	if ((_top <= -windowHeight / 3 && windowWidth > 640) || (_top <= 0 && windowWidth <= 640)) {
 		bg3TitleMask.css('width', '100%');
 		bg3TitleMask.css('opacity', 1);
 	} else {
-		//title3.hide();
 		bg3TitleMask.css('width', 0);
 		bg3TitleMask.css('opacity', 0);
 	}
-	var _bg3StartAt = Math.min(windowHeight * 0.75, bg3.data('height') * 1);
+	// var _bg3StartAt = Math.min(windowHeight * 0.75, bg3.data('height') * 1);
+	var _bg3StartAt = Math.min(windowHeight * 0.75, bg3.data('height') * 0.5);
 	if (_top <= windowHeight - _bg3StartAt) {
 		// show bg3
 		bg3.css('transform', 'scale(1, 1)');
