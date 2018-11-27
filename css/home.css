@@ -704,6 +704,7 @@
 }
 .menu-title img {
     width: 8.5em;
+    min-width: 60px;
 }
 
 .menu-icon {
@@ -713,6 +714,7 @@
 }
 .menu-icon img {
     width: 3.9375em;
+    min-width: 30px;
 }
 .trangle-scale-ani {
     animation: trangle-scale 0.3s ease-out 0.9s;
@@ -806,6 +808,10 @@
 
     .bg4-image-3 {
          transition: top 1s, opacity 1s;
+    }
+
+    .menu {
+        left: 0;
     }
 }
 
