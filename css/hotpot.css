@@ -65,7 +65,9 @@ img {
 	left: 0;
 }
 @media screen and ( max-width: 600px ) {
-
+	.hotpot-wrapper  {
+		width: 100%;
+	}
 	.hotpot-scale-image {
 		width: 178%;
 		height: 178%;
