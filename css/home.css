@@ -71,7 +71,7 @@
     position: fixed;
     top: 100%;
     z-index: 2;
-    width: 26.1875em;
+    width: 6.541875em;
     min-width: 314px;
 }
 .bg2-title-1 img {
@@ -86,10 +86,10 @@
 
 .bg2-title-1-placeholder {
     position: relative;
-    width: 24.1875em;
+    width: 6.046875em;
     min-width: 291px;
     opacity: 0;
-    margin-bottom: 7em;
+    margin-bottom: 1.75em;
 }
 
 .bg2-title-2 {
@@ -115,7 +115,7 @@
     width: 100%;
 }
 .container2-texts img:last-child {
-    margin-left: 0.75em;
+    margin-left: 0.1875em;
 }
 .container2-inner img {
     vertical-align: top;
@@ -140,7 +140,7 @@
     transition: top 1s, opacity 1s;
 }
 .bg2-text-2 {
-    left: 5em;
+    left: 1.25em;
     transition: top 1s ease 0.25s, opacity 1s ease 0.25s;
 }
 .bg2-text-3 {
@@ -149,7 +149,7 @@
 
 .bg2-title-text {
     position: absolute;
-    width: 9.25em;
+    width: 2.3125em;
     min-width: 111px;
     left: 0;
     top: 0;
@@ -168,9 +168,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 18.125em;
+    width: 4.53125em;
     min-width: 218px;
-    height: 13em;
+    height: 3.25em;
     min-height: 156px;
 }
 
@@ -243,24 +243,24 @@
     width: 0;
 }
 .width-large {
-    width: 0.625em;
+    width: 0.15625em;
     min-width: 6px;
 }
 .height-large {
-    height: 0.625em;
+    height: 0.15625em;
     min-height: 6px;
 }
 .width-middle {
-    width: 0.4375em;
+    width: 0.109375em;
     min-width: 5px;
 }
 .height-middle {
-    height: 0.4375em;
+    height: 0.109375em;
     min-height: 5px;
 }
 .bottom-text {
     position: absolute;
-    height: 2em;
+    height: 0.5em;
     width: 291px;
     left: 155px;
     top: 178px;
@@ -275,9 +275,9 @@
 }
 .bg2-title-2 {
     position: relative;
-    width: 16em;
+    width: 4em;
     min-width: 192px;
-    height: 5.9375em;
+    height: 1.484375em;
     min-height: 55px;
     cursor: pointer;
 }
@@ -289,10 +289,10 @@
     left: 0;
 }
 .square-container-1, .square-container-2 {
-    width: 6em;
+    width: 1.5em;
     max-width: 96px;
     min-width: 48px;
-    height: 6em;
+    height: 1.5em;
     max-height: 96px;
     min-height: 48px;
     position: absolute;
@@ -306,8 +306,8 @@
     position: absolute;
     right: 14px;
     top: 14px;
-    width: 1em;
-    height: 1em;
+    width: 0.25em;
+    height: 0.25em;
     min-width: 10px;
     min-height: 10px;
     opacity: 0;
@@ -351,27 +351,27 @@
 }
 
 .bg2-image-1 {
-    width: 13.9375em;
+    width: 3.484375em;
     min-width: 168px;
 }
 .bg2-image-2 {
-    width: 10.3125em;
+    width: 2.578125em;
     min-width: 123px;
 }
 .bg2-image-3 {
-    width: 10.6875em;
+    width: 2.671875em;
     min-width: 128px;
 }
 .bg2-des-1 {
-    width: 16.1875em;
+    width: 4.046875em;
     min-width: 195px;
 }
 .bg2-des-2 {
-    width: 17.1875em;
+    width: 4.296875em;
     min-width: 205px;
 }
 .bg2-des-3 {
-    width: 20.1255em;
+    width: 5.031375em;
     min-width: 241px;
 }
 
@@ -450,7 +450,6 @@
     width: 90%;
     max-width: 1200px;
     min-width: 320px;
-   /* height: 53em;*/
     position: fixed;
     overflow: hidden;
     transition: top 0s linear;
@@ -464,7 +463,7 @@
     top: 0;
     left: 0;
     transition: none;
-    padding: 0 7.5em;
+    padding: 0 1.875em;
     background-color: #fff;
     cursor: pointer;
 }
@@ -485,38 +484,38 @@
 }
 
 .bg4-titles {
-    padding: 5em 7.5em;
+    padding: 1.25em 1.875em;
     position: relative;
     overflow: hidden;
 }
 
 .bg4-title-1 {
-    width: 14.6875em;
+    width: 3.671875em;
     max-width: 235px;
     min-width: 118px;
     text-align: center;
     overflow: hidden;
-    margin-top: 5em;
-    margin-bottom: 7.25em;
+    margin-top: 1.25em;
+    margin-bottom: 1.8125em;
     float: left;
 }
 
 .bg4-title-2 {
-    width: 16.375em;
-    height: 6em;
+    width: 4.09375em;
+    height: 1.5em;
     max-width: 262px;
     min-width: 131px;
     max-height: 96px;
     min-height: 48px;
     position: relative;
     float: right;
-    margin-top: 7em;
+    margin-top: 1.75em;
     cursor: pointer;
 }
 
 .bg4-title-text {
     position: absolute;
-    width: 9.25em;
+    width: 2.3125em;
     min-width: 74px;
     max-width: 148px;
     left: 0;
@@ -528,7 +527,7 @@
 }
 
 .bg4-image-container {
-    width: 75em;
+    width: 18.75em;
     max-width: 1008px;
     margin: 0 auto;
 }
@@ -563,9 +562,9 @@
 }
 
 .bg4-image-box {
-    width: 25em;
+    width: 6.25em;
     max-width: 336px;
-    padding: 0 1.5em;
+    padding: 0 0.375em;
     float: left;
     position: relative;
 }
@@ -573,88 +572,10 @@
 .blank {
 
 }
-.footer {
-    padding: 3.5em;
-    min-height: 20em;
-    background-color: #3a3a3a;
-    width: 100%;
-    position: relative;
-    z-index: 12;
-    /*
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    */
-}
-.footer img {
-    width: 100%;
-}
-
-.footer-inner {
-    width: 100%;
-    max-width: 1058px;
-    margin: 0 auto;
-}
-
-.footer-image-wrapper {
-    width: 18%;
-    float: left;
-}
-
-.footer-image-wrapper-h {
-    width: 27%;
-    float: left;
-}
-
-
-.footer-text-1 {
-    width: 13.625em;
-    max-width: 218px;
-    min-width: 76px;
-    margin: 0 auto;
-}
-
-.footer-text-2 {
-    width: 7.1875em;
-    max-width: 115px;
-    min-width: 41px;
-    margin: 0 auto;
-}
-
-.footer-text-3 {
-    width: 9.1875em;
-    max-width: 147px;
-    min-width: 52px;
-    margin: 0 auto;
-}
-
-.footer-text-4 {
-    width: 9.1875em;
-    max-width: 147px;
-    min-width: 52px;
-    margin: 0 auto;
-}
-
-.footer-text-5 {
-    width: 7.25em;
-    max-width: 116px;
-    min-width: 41px;
-    margin: 0 auto;
-}
-
-.footer-text-left {
-    float: left;
-    margin-right: 3em;
-}
-
-.footer-text-right {
-    float: right;
-    margin-left:;
-}
 
 .rect-1 {
     width: 65%;
-    height: 37.1875em;
+    height: 9.296875em;
     background-color: #ea0029;
     position: fixed;
     right: 0;
@@ -670,7 +591,7 @@
 }
 
 .title-1 {
-    padding: 5em 5em;
+    padding: 1.25em 1.25em;
     height: 100%;
     position: relative;
     top: 100%;
@@ -693,32 +614,6 @@
     z-index: 0;
 }
 
-.menu {
-    position: fixed;
-    left: 5em;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-.menu-title {
-    background-color: #ea0029;
-    padding: 2.5em;
-}
-.menu-title img {
-    width: 8.5em;
-    min-width: 60px;
-}
-
-.menu-icon {
-    background-color: #fff;
-    padding: 2.5em;
-    text-align: center;
-}
-.menu-icon img {
-    width: 3.9375em;
-    min-width: 30px;
-}
 .trangle-scale-ani {
     animation: trangle-scale 0.3s ease-out 0.9s;
     animation-fill-mode: both;
@@ -795,11 +690,10 @@
 
     .bg4-image-container {
         width: 100%;
-        /* max-width: 1008px; */
         margin: 0 auto;
     }
     .rect-1 {
-        height: 55em;
+        height: 13.75em;
     }
     .bg4-image-1 {
         transition: top 1s, opacity 1s;

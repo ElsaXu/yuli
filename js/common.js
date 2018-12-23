@@ -13,7 +13,7 @@ var defaultWidth = 1920; // Standard designed width
 var scrollTop = 0;
 var scrollTopPrev = 0;
 var config = {
-	body_fontSize: 16,
+	body_fontSize: 16 * 4,
 	bg_1_width: 1920,
 	bg_1_height: 2133,
 	bg_1_hideAt: 1100,

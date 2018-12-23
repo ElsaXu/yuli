@@ -62,9 +62,126 @@ input, textarea {
     color: #fff;
     font-weight: bold;
 }
+.global-mask span {
+    opacity: 0.5;
+}
 
 .loading-info {
     position: relative;
     text-align: center;
     top: 45%;
+}
+
+.footer {
+    padding: 0.875em;
+    min-height: 5em;
+    background-color: #3a3a3a;
+    width: 100%;
+    position: relative;
+    z-index: 12;
+    /*
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    */
+}
+.footer img {
+    width: 100%;
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: 1058px;
+    margin: 0 auto;
+}
+
+.footer-image-wrapper {
+    width: 18%;
+    float: left;
+}
+
+.footer-image-wrapper-h {
+    width: 27%;
+    float: left;
+}
+
+
+.footer-text-1 {
+    width: 3.40625em;
+    max-width: 218px;
+    min-width: 76px;
+    margin: 0 auto;
+}
+
+.footer-text-2 {
+    width: 1.796875em;
+    max-width: 115px;
+    min-width: 41px;
+    margin: 0 auto;
+}
+
+.footer-text-3 {
+    width: 2.296875em;
+    max-width: 147px;
+    min-width: 52px;
+    margin: 0 auto;
+}
+
+.footer-text-4 {
+    width: 2.296875em;
+    max-width: 147px;
+    min-width: 52px;
+    margin: 0 auto;
+}
+
+.footer-text-5 {
+    width: 1.8125em;
+    max-width: 116px;
+    min-width: 41px;
+    margin: 0 auto;
+}
+
+.footer-text-left {
+    float: left;
+    margin-right: 0.75em;
+}
+
+.footer-text-right {
+    float: right;
+    margin-left:;
+}
+
+.menu {
+    position: fixed;
+    left: 1.25em;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-title {
+    background-color: #ea0029;
+    padding: 0.625em;
+}
+.menu-title img {
+    width: 2.125em;
+    min-width: 60px;
+}
+
+.menu-icon {
+    background-color: #fff;
+    padding: 0.625em;
+    text-align: center;
+}
+.menu-icon img {
+    width: 0.984375em;
+    min-width: 30px;
+}
+
+@media screen and (max-width: 640px) {
+
+    .menu {
+        left: 0;
+    }
+
 }
