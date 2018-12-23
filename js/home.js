@@ -87,7 +87,7 @@ var config = {
 	rect_1_hideAt: 1200,
 	rect_1_widthRate: 0.65,
 	title_1_hideAt: 0,
-	bg_2_defaultColor: '#000',
+	bg_2_defaultColor: '#b40020',
 	bg_2_finalColor: '#b40020',
 	bg_2_colorSwitchRate: 0.75,
 	title_2_showAtRate: 0.5,
