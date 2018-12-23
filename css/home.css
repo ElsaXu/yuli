@@ -1,23 +1,4 @@
 
-.global-mask {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ea0029;
-    z-index: 99;
-    font-size: 12px;
-    color: #fff;
-    font-weight: bold;
-}
-
-.loading-info {
-    position: relative;
-    text-align: center;
-    top: 45%;
-}
-
 .container {
     width: 100%;
     position: relative;

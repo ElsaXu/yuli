@@ -28,19 +28,48 @@ var config = {
 	bg_2_colorSwitchRate: 0.75,
 	title_2_showAtRate: 0.5,
 }
+
+var allImages;
+var globalMask = $('.global-mask');
+var loadingNum = globalMask.find('.loading-num');
+
 $(document).ready(function() {
 	// win.scrollTop(0);
 	// windowResized();
 	// windowScrolled();
-	$('body').hide();
+	// $('body').hide();
+	allImages = $('img');
+	checkImagesLoading();
 	// This setTimeout below is a work around for reset scroll bar in IE 
 	setTimeout(function() {
-		$('body').show();
-		win.scrollTop(0);
-		windowResized();
-		addEventListeners();
+		// $('body').show();
+		// win.scrollTop(0);
 	}, 150);
 });
+function init() {
+	win.scrollTop(0);
+	windowResized();
+	// windowScrolled();
+	addEventListeners();
+}
+function checkImagesLoading() {
+	var intervalId;
+	intervalId = setInterval(function() {
+		check();
+	}, 300);
+	function check() {
+		var numDone = 0;
+		allImages.each(function(index, item) {
+			if (item.complete) numDone ++;
+			loadingNum.text(Math.round(numDone / allImages.length * 100));
+		});
+		if (numDone >= allImages.length) {
+			init();
+			globalMask.hide();
+			if (intervalId) clearInterval(intervalId);
+		}
+	}
+}
 
 /* 
  * Event listener definition
