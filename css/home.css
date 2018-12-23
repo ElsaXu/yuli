@@ -122,6 +122,7 @@
     top: 0;
     background-color: #b40020;
     opacity: 0;
+    cursor: pointer;
 }
 
 .bg2-title-2-fixed-inner {
@@ -297,6 +298,7 @@
     min-width: 192px;
     height: 5.9375em;
     min-height: 55px;
+    cursor: pointer;
 }
 .image-mask {
     position: absolute;
@@ -483,6 +485,7 @@
     transition: none;
     padding: 0 7.5em;
     background-color: #fff;
+    cursor: pointer;
 }
 .bg4-title-2-fixed>.bg4-title-2 {
     margin-top: 0;
@@ -527,6 +530,7 @@
     position: relative;
     float: right;
     margin-top: 7em;
+    cursor: pointer;
 }
 
 .bg4-title-text {

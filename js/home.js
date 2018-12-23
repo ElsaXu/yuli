@@ -155,6 +155,18 @@ function addEventListeners() {
 	win.scroll(function(evt) {
 		windowScrolled();
 	});
+	title21.on('click', function() {
+		window.location.href = "./hotpot.html";
+	});
+	title21Fixed.on('click', function() {
+		window.location.href = "./hotpot.html";
+	});
+	title41.on('click', function() {
+		window.location.href = "./specialty.html";
+	});
+	title41Fixed.on('click', function() {
+		window.location.href = "./specialty.html";
+	});
 }
 /* 
  * Event listener definition
