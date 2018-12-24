@@ -61,6 +61,8 @@ var smallText2 = $('.bg4-title-2 .bg2-text-mask');
 var allImages;
 var globalMask = $('.global-mask');
 var loadingNum = globalMask.find('.loading-num');
+var menuSlider = $('.menu-wrapper');
+var menuBar = $('.menu-icon');
 /* 
  * Visual dom elements definition
  * End
@@ -114,6 +116,9 @@ $(document).ready(function() {
 		// win.scrollTop(0);
 	}, 150);
 });
+menuBar.on('click',function() {
+	menuSlider.toggleClass("menu-slider-left-ani")
+})
 function init() {
 	win.scrollTop(0);
 	windowResized();
