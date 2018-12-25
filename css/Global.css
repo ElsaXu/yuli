@@ -158,13 +158,13 @@ input, textarea {
     transition: transform 0.3s ease-in;
 }
 .menu-slider {
-    width: 8em;
+    width: 5.03125em;
     height: 16em;
     background-color: #fff;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 .menu-slider img {
-    width: 6em;
+    width: 5.03125em;
     min-width: 50px;
 
 }
@@ -174,7 +174,6 @@ input, textarea {
     left: 100%;
     top: 0;
     z-index: 30;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .menu-slider-left-ani {
