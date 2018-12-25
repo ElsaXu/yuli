@@ -106,13 +106,10 @@ $(document).ready(function() {
 	// windowResized();
 	// windowScrolled();
 	// $('body').hide();
+	// $('body').children('div').hide();
+	globalMask.show();
 	allImages = $('img');
 	checkImagesLoading();
-	// This setTimeout below is a work around for reset scroll bar in IE 
-	setTimeout(function() {
-		// $('body').show();
-		// win.scrollTop(0);
-	}, 150);
 });
 function init() {
 	win.scrollTop(0);
@@ -132,6 +129,7 @@ function checkImagesLoading() {
 			loadingNum.text(Math.round(numDone / allImages.length * 100));
 		});
 		if (numDone >= allImages.length) {
+			//$('body').children('div').show();
 			init();
 			globalMask.hide();
 			if (intervalId) clearInterval(intervalId);
