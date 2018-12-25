@@ -236,7 +236,7 @@ input, textarea {
     background: rgba(0, 0, 0, 0.8);
     display: none;
 }
-.share-mask-weixin img, .share-mask-video img {
+.share-mask-weixin img {
     width: 100%;
 }
 
@@ -246,4 +246,10 @@ input, textarea {
     margin: 0 auto;
     top: 40%;
     position: relative;
+}
+
+.share-video-clip {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
