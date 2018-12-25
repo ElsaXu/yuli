@@ -62,7 +62,7 @@ var allImages;
 var globalMask = $('.global-mask');
 var loadingNum = globalMask.find('.loading-num');
 var menuSlider = $('.menu-wrapper');
-var menuBar = $('.menu-icon');
+var menuBar = $('.menu-icon-wrapper');
 /* 
  * Visual dom elements definition
  * End
@@ -116,9 +116,15 @@ $(document).ready(function() {
 		// win.scrollTop(0);
 	}, 150);
 });
+
+document.getElementById("menu-icon-wrapper").addEventListener('touchstart',function(e) {
+	console.log("123")
+	menuSlider.toggleClass("menu-slider-left-ani")
+})
 menuBar.on('click',function() {
 	menuSlider.toggleClass("menu-slider-left-ani")
 })
+
 function init() {
 	win.scrollTop(0);
 	windowResized();

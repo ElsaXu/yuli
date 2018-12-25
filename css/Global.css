@@ -154,19 +154,22 @@ input, textarea {
     position: fixed;
     top: 0;
     left: 0;
+    background-color: #fff;
+    padding: 0.625em;
     transform: translate(0,0);
     transition: transform 0.3s ease-in;
+    z-index: 20;
 }
 .menu-slider {
     width: 5.03125em;
-    height: 16em;
+    height: 12em;
+    min-height: 400px;
+    min-width: 250px;
     background-color: #fff;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 .menu-slider img {
     width: 5.03125em;
-    min-width: 50px;
-
+    min-width: 250px;
 }
 
 .menu {
@@ -174,11 +177,6 @@ input, textarea {
     left: 100%;
     top: 0;
     z-index: 30;
-}
-
-.menu-slider-left-ani {
-    transform: translate(-100%,0);
-    transition: transform 0.3s ease-in;
 }
 
 .menu-title {
@@ -205,5 +203,18 @@ input, textarea {
     .menu {
         /*left: 0;*/
     }
+    .menu-slider {
+        width: 10.03125em;
+        height: 20em;
+        background-color: #fff;
+    }
 
+}
+
+.menu-slider-left-ani {
+    transform: translate(-100%,0);
+    -webkit-transform: translate(-100%,0);
+    transition: transform 0.3s ease-in;
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    -ms-transition: -ms-transform 0.3s ease-in;
 }
