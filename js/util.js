@@ -1,3 +1,5 @@
+(
+	function() {
 
 var shareBtnWeiBo = $('.share-weibo');
 var shareBtnWeiXin = $('.share-weixin');
@@ -10,6 +12,10 @@ var shareMovie = shareVideoClip.find('video');
 var defaultVideoWidth = 720;
 var defaultVideoHeight = 480;
 var ratio = defaultVideoWidth / defaultVideoHeight;
+var menuWrapper = $('.menu-wrapper');
+var menuBar = $('.menu-icon-wrapper');
+var menu = $('.menu');
+//var menuExpanded = false;
 
 shareMaskWeiXin.hide();
 shareMaskVideo.hide();
@@ -39,6 +45,20 @@ shareImageWeiXin.on('click', function() {
 
 });
 
+menuBar.on('click', function() {
+	//menuExpanded = !menuExpanded;
+	menuWrapper.toggleClass('menu-slider-left-ani');
+	if (menuWrapper.hasClass('menu-slider-left-ani')) {
+		menu.css('left', menuWrapper.outerWidth());
+		menu.find('.menu-icon-1').hide();
+		menu.find('.menu-icon-2').show();
+	} else {
+		menu.css('left', '');
+		menu.find('.menu-icon-1').show();
+		menu.find('.menu-icon-2').hide();
+	}
+});
+
 $(window).on('resize.util', function() {
 	checkWindowSize();
 });
@@ -59,4 +79,9 @@ function checkWindowSize() {
 	shareMovie.css('height', hei);
 	shareVideoClip.css('top', ($(window).height() - hei) / 2);
 	shareVideoClip.css('left', ($(window).width() - wid) / 2);
+	if (menuWrapper.hasClass('menu-slider-left-ani')) {
+		menu.css('left', menuWrapper.outerWidth());
+	}
 }
+
+})();

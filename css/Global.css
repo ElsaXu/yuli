@@ -162,7 +162,7 @@ input, textarea {
     left: 1.25em;
     top: 0;
     z-index: 20;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    
     transition: left 0.3s;
 }
 
@@ -275,12 +275,11 @@ input, textarea {
     width: 5.03125em;
     height: 12em;
     min-height: 400px;
-    min-width: 250px;
+    min-width: 200px;
     background-color: #fff;
 }
 .menu-slider img {
-    width: 5.03125em;
-    min-width: 250px;
+    width: 100%;
 }
 .menu-slider-image {
     position: relative;
@@ -291,8 +290,8 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    background: red;
     opacity: 0.5;
+    cursor: pointer;
 }
 .menu-slider-yuli {
     position: absolute;
@@ -300,8 +299,8 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    background: green;
     opacity: 0.5;
+    cursor: pointer;
 }
 .menu-slider-hotpot {
     position: absolute;
@@ -309,8 +308,8 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    background: yellow;
     opacity: 0.5;
+    cursor: pointer;
 }
 .menu-slider-specialty {
     position: absolute;
@@ -318,16 +317,16 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    background: blue;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .menu-slider-left-ani {
     transform: translate(0,0);
     -webkit-transform: translate(,0);
-    transition: transform 0.3s ease-in;
-    -webkit-transition: -webkit-transform 0.3s ease-in;
-    -ms-transition: -ms-transform 0.3s ease-in;
+    transition: transform 0.3s;
+    -webkit-transition: -webkit-transform 0.3s;
+    -ms-transition: -ms-transform 0.3s;
 }
 /*
 .menu-ani {
@@ -342,7 +341,7 @@ input, textarea {
 @media screen and (max-width: 640px) {
 
     .menu-slider {
-        width: 10.03125em;
+        width: 2em;
         height: 20em;
         background-color: #fff;
     }
