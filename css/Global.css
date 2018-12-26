@@ -194,9 +194,9 @@ input, textarea {
 }
 
 .share {
-    position: absolute;
+    position: fixed;
     right:5px;
-    top: 15px;
+    bottom: 15px;
     width: 2.875em;
     height: 3.578125em;
     min-width: 80px;
