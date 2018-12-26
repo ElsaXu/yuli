@@ -151,12 +151,19 @@ input, textarea {
     margin-left:;
 }
 
+/*.menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 30;
+}*/
 .menu {
     position: fixed;
     left: 1.25em;
     top: 0;
     z-index: 20;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s;
 }
 
 .menu-title {
@@ -252,4 +259,101 @@ input, textarea {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 0.625em;
+    transform: translate(-100%,0);
+    transition: transform 0.3s;
+    z-index: 20;
+}
+.menu-slider {
+    width: 5.03125em;
+    height: 12em;
+    min-height: 400px;
+    min-width: 250px;
+    background-color: #fff;
+}
+.menu-slider img {
+    width: 5.03125em;
+    min-width: 250px;
+}
+.menu-slider-image {
+    position: relative;
+}
+.menu-slider-home {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    background: red;
+    opacity: 0.5;
+}
+.menu-slider-yuli {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    background: green;
+    opacity: 0.5;
+}
+.menu-slider-hotpot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    background: yellow;
+    opacity: 0.5;
+}
+.menu-slider-specialty {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    background: blue;
+    opacity: 0.5;
+}
+
+.menu-slider-left-ani {
+    transform: translate(0,0);
+    -webkit-transform: translate(,0);
+    transition: transform 0.3s ease-in;
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    -ms-transition: -ms-transform 0.3s ease-in;
+}
+/*
+.menu-ani {
+    transform: translate(1em,0);
+    -webkit-transform: translate(1em,0);
+    transition: transform 0.3s ease-in;
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    -ms-transition: -ms-transform 0.3s ease-in;
+}
+*/
+
+@media screen and (max-width: 640px) {
+
+    .menu-slider {
+        width: 10.03125em;
+        height: 20em;
+        background-color: #fff;
+    }
+    /*
+    .menu-ani {
+        transform: translate(19.09575em,0);
+        -webkit-transform: translate(19.09575em,0);
+        transition: transform 0.3s ease-in;
+        -webkit-transition: -webkit-transform 0.3s ease-in;
+        -ms-transition: -ms-transform 0.3s ease-in;
+    }
+    */
+
 }

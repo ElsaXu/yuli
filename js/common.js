@@ -52,6 +52,7 @@ function init() {
 	// windowScrolled();
 	addEventListeners();
 }
+
 function checkImagesLoading() {
 	var intervalId;
 	intervalId = setInterval(function() {

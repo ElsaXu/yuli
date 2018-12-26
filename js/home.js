@@ -61,6 +61,9 @@ var smallText2 = $('.bg4-title-2 .bg2-text-mask');
 var allImages;
 var globalMask = $('.global-mask');
 var loadingNum = globalMask.find('.loading-num');
+var menuSlider = $('.menu-wrapper');
+var menuBar = $('.menu-icon-wrapper');
+var menu = $('.menu');
 /* 
  * Visual dom elements definition
  * End
@@ -111,6 +114,18 @@ $(document).ready(function() {
 	allImages = $('img');
 	checkImagesLoading();
 });
+
+document.getElementById("menu-icon-wrapper").addEventListener('touchstart',function(e) {
+	console.log("123")
+	menuSlider.toggleClass("menu-slider-left-ani")
+	menu.toggleClass("menu-ani")
+
+})
+menuBar.on('click',function() {
+	menuSlider.toggleClass("menu-slider-left-ani")
+	menu.toggleClass("menu-ani")
+})
+
 function init() {
 	win.scrollTop(0);
 	windowResized();
