@@ -63,6 +63,7 @@ var globalMask = $('.global-mask');
 var loadingNum = globalMask.find('.loading-num');
 var menuSlider = $('.menu-wrapper');
 var menuBar = $('.menu-icon-wrapper');
+var menu = $('.menu');
 /* 
  * Visual dom elements definition
  * End
@@ -120,9 +121,12 @@ $(document).ready(function() {
 document.getElementById("menu-icon-wrapper").addEventListener('touchstart',function(e) {
 	console.log("123")
 	menuSlider.toggleClass("menu-slider-left-ani")
+	menu.toggleClass("menu-ani")
+
 })
 menuBar.on('click',function() {
 	menuSlider.toggleClass("menu-slider-left-ani")
+	menu.toggleClass("menu-ani")
 })
 
 function init() {
