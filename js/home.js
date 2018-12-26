@@ -1,7 +1,4 @@
 
-
-
-
 /* 
  * Visual dom elements definition
  * Start 
