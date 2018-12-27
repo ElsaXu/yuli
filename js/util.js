@@ -1,6 +1,8 @@
+
 (
 	function() {
 
+var sharePanel = $('.share');
 var shareBtnWeiBo = $('.share-weibo');
 var shareBtnWeiXin = $('.share-weixin');
 var shareBtnVideo = $('.share-video');
@@ -15,7 +17,17 @@ var ratio = defaultVideoWidth / defaultVideoHeight;
 var menuWrapper = $('.menu-wrapper');
 var menuBar = $('.menu-icon-wrapper');
 var menu = $('.menu');
+var footer = $('.footer');
+var windowHeight = 0;
+var pageHeight = 0;
+var menuHeight = 0;
+var scrollTop = 0;
 //var menuExpanded = false;
+if (window.registerImagesLoadedListener) {
+	window.registerImagesLoadedListener.add(function() {
+		checkWindowSize();
+	});
+}
 
 shareMaskWeiXin.hide();
 shareMaskVideo.hide();
@@ -63,11 +75,18 @@ $(window).on('resize.util', function() {
 	checkWindowSize();
 });
 
+$(window).on('scroll.util', function() {
+	checkWindowScroll();
+});
+
 checkWindowSize();
 
 function checkWindowSize() {
 	var wid = $(window).width();
 	var hei = $(window).height();
+	windowHeight = hei;
+	pageHeight = $('body').height();
+	footerHeight = footer.outerHeight();
 	wid = Math.min(wid, defaultVideoWidth);
 	hei = Math.min(hei, defaultVideoHeight);
 	if (wid / hei > ratio) {
@@ -81,6 +100,15 @@ function checkWindowSize() {
 	shareVideoClip.css('left', ($(window).width() - wid) / 2);
 	if (menuWrapper.hasClass('menu-slider-left-ani')) {
 		menu.css('left', menuWrapper.outerWidth());
+	}
+}
+
+function checkWindowScroll() {
+	scrollTop = $(window).scrollTop();
+	if (scrollTop >= pageHeight - footerHeight - windowHeight) {
+		sharePanel.css('bottom', (footerHeight + 15) + 'px');
+	} else {
+		sharePanel.css('bottom', '15px');
 	}
 }
 

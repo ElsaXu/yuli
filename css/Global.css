@@ -159,7 +159,8 @@ input, textarea {
 }*/
 .menu {
     position: fixed;
-    left: 1.25em;
+    /*left: 1.25em;*/
+    left: 0;
     top: 0;
     z-index: 20;
     
@@ -202,6 +203,7 @@ input, textarea {
     min-width: 80px;
     min-height: 100px;
     z-index: 20;
+    transition: bottom 0.2s;
 }
 .share img {
     width: 100%;

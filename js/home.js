@@ -1,3 +1,22 @@
+window.registerImagesLoadedListener = {
+	callbacks: [],
+	add: function(callback) {
+		if (callback instanceof Function) {
+			this.callbacks.push(callback);
+		}
+	},
+	remove: function(callback) {
+		var index = this.callbacks.indexOf(callback);
+		if (index >= 0) {
+			this.callbacks.splice(index, 1);
+		}
+	},
+	trigger: function() {
+		for (var i = 0; i < this.callbacks.length; i++) {
+			this.callbacks[i]();
+		}
+	}	
+};
 
 /* 
  * Visual dom elements definition
@@ -131,6 +150,7 @@ function checkImagesLoading() {
 			init();
 			globalMask.hide();
 			if (intervalId) clearInterval(intervalId);
+			window.registerImagesLoadedListener.trigger();
 		}
 	}
 }
@@ -164,6 +184,7 @@ function addEventListeners() {
 		window.location.href = "./specialty.html";
 	});
 }
+
 /* 
  * Event listener definition
  * Emd 

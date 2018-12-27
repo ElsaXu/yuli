@@ -484,8 +484,16 @@
 }
 
 .bg4-titles {
+    /*
     padding: 1.25em 1.875em;
     position: relative;
+    overflow: hidden;
+    */
+    width: 18.75em;
+    max-width: 1008px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
     overflow: hidden;
 }
 
@@ -686,6 +694,12 @@
         padding: 0;
         float: none;
         position: relative;
+    }
+
+    .bg4-titles {
+        width: 86%;
+        padding: 0;
+        margin: 0 auto;
     }
 
     .bg4-image-container {
