@@ -37,7 +37,7 @@ shareBtnWeiXin.on('click', function() {
 });
 
 shareBtnWeiBo.on('click', function() {
-
+	window.open('https://weibo.com/p/1006062670501850/home?from=page_100606&mod=TAB&is_all=1#place', '_blank');
 });
 
 shareBtnVideo.on('click', function() {
