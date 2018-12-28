@@ -251,10 +251,20 @@ input, textarea {
 
 .share-weixin-img {
     width: 100%;
-    max-width: 333px;
+    max-width: 380px;
     margin: 0 auto;
-    top: 40%;
+    top: 20%;
     position: relative;
+    background: #fff;
+    padding: 66px;
+}
+
+.share-weixin-cross {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px !important;
+    height: 25px;
 }
 
 .share-video-clip {
@@ -267,8 +277,9 @@ input, textarea {
     position: fixed;
     top: 0;
     left: 0;
+    height: 100vh;
     background-color: #fff;
-    padding: 0.625em;
+    padding: 30px;
     transform: translate(-100%,0);
     transition: transform 0.3s;
     z-index: 20;
@@ -346,6 +357,10 @@ input, textarea {
         width: 2em;
         height: 20em;
         background-color: #fff;
+    }
+
+    .menu-wrapper {
+        padding: 20px;
     }
     /*
     .menu-ani {
