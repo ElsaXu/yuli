@@ -11,7 +11,7 @@ var shareMaskVideo = $('.share-mask-video');
 var shareImageWeiXin = $('.share-weixin-img');
 var shareVideoClip = $('.share-video-clip');
 var shareMovie = shareVideoClip.find('video');
-var defaultVideoWidth = 720;
+var defaultVideoWidth = 640;
 var defaultVideoHeight = 480;
 var ratio = defaultVideoWidth / defaultVideoHeight;
 var menuWrapper = $('.menu-wrapper');
@@ -26,8 +26,15 @@ var scrollTop = 0;
 if (window.registerImagesLoadedListener) {
 	window.registerImagesLoadedListener.add(function() {
 		checkWindowSize();
+		var rec = $('#recruit');
+		if (rec.length > 0 && window.location.hash === '#zhaopin') {
+			window.location.hash = '';
+			$(document).scrollTop(rec.offset().top);
+		}
 	});
 }
+
+console.log('url hash', window.location.hash);
 
 shareMaskWeiXin.hide();
 shareMaskVideo.hide();
