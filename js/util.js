@@ -34,8 +34,6 @@ if (window.registerImagesLoadedListener) {
 	});
 }
 
-console.log('url hash', window.location.hash);
-
 shareMaskWeiXin.hide();
 shareMaskVideo.hide();
 
