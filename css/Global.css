@@ -303,9 +303,17 @@ input, textarea {
 }
 .menu-slider img {
     width: 100%;
+} 
+.menu-item img {
+    width: 100%;
+    /*height: 100%;*/
 }
 .menu-slider-image {
     position: relative;
+    min-width: 200px;
+    min-height: 200px;
+    width: 5.0625em;
+    height: 4.3em;
 }
 .menu-slider-home {
     position: absolute;
@@ -313,7 +321,8 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    opacity: 0.5;
+    border-bottom: 1px solid #ddd;
+    /*opacity: 0.5;*/
     cursor: pointer;
 }
 .menu-slider-yuli {
@@ -322,7 +331,8 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    opacity: 0.5;
+    border-bottom: 1px solid #ddd;
+    /*opacity: 0.5;*/
     cursor: pointer;
 }
 .menu-slider-hotpot {
@@ -331,7 +341,8 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    opacity: 0.5;
+    border-bottom: 1px solid #ddd;
+    /*opacity: 0.5;*/
     cursor: pointer;
 }
 .menu-slider-specialty {
@@ -340,10 +351,22 @@ input, textarea {
     left: 0;
     height: 25%;
     width: 100%;
-    opacity: 0.5;
+    border-bottom: 1px solid #ddd;
+    /*opacity: 0.5;*/
     cursor: pointer;
+} 
+.menu-home-hover {
+    display: none;
 }
-
+.menu-about-hover {
+    display: none;
+}
+.menu-hotpot-hover {
+    display: none;
+}
+.menu-specialty-hover {
+    display: none;
+}
 .menu-slider-left-ani {
     transform: translate(0,0);
     -webkit-transform: translate(,0);

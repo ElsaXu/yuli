@@ -61,7 +61,41 @@ shareMaskVideo.on('click', function() {
 shareImageWeiXin.on('click', function() {
 
 });
+$(".menu-slider-home").mouseover(function(){
+    $(".menu-home-normal").hide();
+    $(".menu-home-hover").show();
+});
+$(".menu-slider-home").mouseout(function(){
+    $(".menu-home-normal").show();
+    $(".menu-home-hover").hide();
+});
 
+$(".menu-slider-yuli").mouseover(function(){
+    $(".menu-about-normal").hide();
+    $(".menu-about-hover").show();
+});
+$(".menu-slider-yuli").mouseout(function(){
+    $(".menu-about-normal").show();
+    $(".menu-about-hover").hide();
+});
+
+$(".menu-slider-hotpot").mouseover(function(){
+    $(".menu-hotpot-normal").hide();
+    $(".menu-hotpot-hover").show();
+});
+$(".menu-slider-hotpot").mouseout(function(){
+    $(".menu-hotpot-normal").show();
+    $(".menu-hotpot-hover").hide();
+});
+
+$(".menu-slider-specialty").mouseover(function(){
+    $(".menu-specialty-normal").hide();
+    $(".menu-specialty-hover").show();
+});
+$(".menu-slider-specialty").mouseout(function(){
+    $(".menu-specialty-normal").show();
+    $(".menu-specialty-hover").hide();
+});
 menuBar.on('click', function() {
 	//menuExpanded = !menuExpanded;
 	menuWrapper.toggleClass('menu-slider-left-ani');
