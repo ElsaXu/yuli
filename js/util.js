@@ -69,6 +69,14 @@ $(".menu-slider-home").mouseout(function(){
     $(".menu-home-normal").show();
     $(".menu-home-hover").hide();
 });
+// $(".menu-slider-home").click(function(){
+//     $(".menu-home-normal").hide();
+//     $(".menu-home-hover").show();
+// });
+$(".menu-slider-home").on('touchstart', function(){
+    $(".menu-home-normal").hide();
+    $(".menu-home-hover").show();
+});
 
 $(".menu-slider-yuli").mouseover(function(){
     $(".menu-about-normal").hide();
@@ -77,6 +85,14 @@ $(".menu-slider-yuli").mouseover(function(){
 $(".menu-slider-yuli").mouseout(function(){
     $(".menu-about-normal").show();
     $(".menu-about-hover").hide();
+});
+// $(".menu-slider-yuli").click(function(){
+//     $(".menu-about-normal").hide();
+//     $(".menu-about-hover").show();
+// });
+$(".menu-slider-yuli").on('touchstart', function(){
+    $(".menu-about-normal").hide();
+    $(".menu-about-hover").show();
 });
 
 $(".menu-slider-hotpot").mouseover(function(){
@@ -87,6 +103,14 @@ $(".menu-slider-hotpot").mouseout(function(){
     $(".menu-hotpot-normal").show();
     $(".menu-hotpot-hover").hide();
 });
+// $(".menu-slider-hotpot").click(function(){
+//     $(".menu-hotpot-normal").hide();
+//     $(".menu-hotpot-hover").show();
+// });
+$(".menu-slider-hotpot").on('touchstart', function(){
+    $(".menu-hotpot-normal").hide();
+    $(".menu-hotpot-hover").show();
+});
 
 $(".menu-slider-specialty").mouseover(function(){
     $(".menu-specialty-normal").hide();
@@ -95,6 +119,14 @@ $(".menu-slider-specialty").mouseover(function(){
 $(".menu-slider-specialty").mouseout(function(){
     $(".menu-specialty-normal").show();
     $(".menu-specialty-hover").hide();
+});
+// $(".menu-slider-specialty").click(function(){
+//     $(".menu-specialty-normal").hide();
+//     $(".menu-specialty-hover").show();
+// });
+$(".menu-slider-specialty").on('touchstart', function(){
+    $(".menu-specialty-normal").hide();
+    $(".menu-specialty-hover").show();
 });
 menuBar.on('click', function() {
 	//menuExpanded = !menuExpanded;
@@ -150,5 +182,15 @@ function checkWindowScroll() {
 		sharePanel.css('bottom', '15px');
 	}
 }
+
+$(document).ready(function() {  
+  
+   $('a').on('click touchend', function(e) {  
+      var el = $(this);  
+      var link = el.attr('href');  
+      window.location = link;  
+   });  
+  
+});  
 
 })();

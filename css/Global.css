@@ -311,7 +311,7 @@ input, textarea {
 .menu-slider-image {
     position: relative;
     min-width: 200px;
-    min-height: 200px;
+    min-height: 170px;
     width: 5.0625em;
     height: 4.3em;
 }
